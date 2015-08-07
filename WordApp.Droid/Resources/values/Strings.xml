@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
-	<string name="app_name">WordApp.Droid</string>
+	<string name="app_name">Cucumber</string>
+
+	<string name="no_comment">This post has no comment yet.\nBe the first one ?</string>
 </resources>

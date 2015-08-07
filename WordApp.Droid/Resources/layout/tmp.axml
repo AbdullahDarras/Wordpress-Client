@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:id="@+id/post_view_bottom_layout"
+        android:layout_height="100dp"
+        android:visibility="visible"
+        android:layout_alignParentBottom="true"
+        android:background="@color/comments_background">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:id="@+id/post_view_bottom_btn_like_layout">
+            <ImageButton
+                android:src="@drawable/like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/menu_btn_padding"
+                android:background="?attr/selectableItemBackground"
+                android:id="@+id/post_view_bottom_btn_like"
+                android:layout_gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                local:MvxBind="Click UnLikeCommand; Visibility IsLikedThisPost, Converter=Visibility;"
+                android:layout_marginRight="@dimen/padding"
+                android:layout_marginLeft="@dimen/padding" />
+            <ImageButton
+                android:src="@drawable/no_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/menu_btn_padding"
+                android:background="?attr/selectableItemBackground"
+                android:id="@+id/post_view_bottom_btn_no_like"
+                android:layout_gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                local:MvxBind="Click LikeCommand; Visibility IsUnLikedThisPost, Converter=Visibility;"
+                android:layout_marginRight="@dimen/padding"
+                android:layout_marginLeft="@dimen/padding" />
+        </RelativeLayout>
+        <TextView
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/post_view_comments_liked_count"
+            android:layout_toRightOf="@id/post_view_bottom_btn_like_layout"
+            android:textColor="@android:color/black"
+            local:MvxBind="Text Like_count"
+            android:layout_marginLeft="@dimen/padding"
+            android:gravity="center" />
+        <TextView
+            android:text="Like"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/post_view_comments_bottom_like_title"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_toRightOf="@id/post_view_comments_liked_count"
+            android:layout_marginLeft="@dimen/padding"
+            local:MvxBind="Click LikeCommand" />
+        <TextView
+            android:text="Comment"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/post_view_comments_nocomments_slg_label"
+            android:paddingLeft="@dimen/padding"
+            android:paddingTop="@dimen/padding"
+            android:paddingBottom="@dimen/padding"
+            android:background="@color/comments_background"
+            android:textColor="@android:color/black"
+            android:lines="3"
+            android:gravity="center"
+            local:MvxBind="Click ShowCommentCommand"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/padding" />
+        <TextView
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_toLeftOf="@id/post_view_comments_nocomments_slg_label"
+            android:id="@+id/post_view_bottom_comment_count"
+            android:layout_marginLeft="0.0dp"
+            android:layout_alignParentBottom="true"
+            local:MvxBind="Text Comment_count"
+            android:gravity="center"
+            android:textColor="@android:color/black" />
+        <ImageButton
+            android:src="@drawable/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/menu_btn_padding"
+            android:background="?attr/selectableItemBackground"
+            android:id="@+id/post_view_bottom_btn_comment"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/post_view_bottom_comment_count"
+            local:MvxBind="Click ShowCommentCommand"
+            android:layout_marginRight="@dimen/padding" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:id="@+id/post_view_comments_nocomments_img_sep"
+            android:scaleType="fitXY"
+            android:cropToPadding="true"
+            android:adjustViewBounds="true"
+            android:background="@color/dark_bold" />
+    </RelativeLayout>
+</RelativeLayout>

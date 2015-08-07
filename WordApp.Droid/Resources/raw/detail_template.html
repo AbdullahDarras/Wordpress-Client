@@ -1,0 +1,82 @@
+﻿<html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		img {{
+			display: inline; 
+			height: auto;
+			max-width: 100%;
+			align: center;
+		}}
+		#image_header {{
+			width:100%;
+			#border-style: solid;
+    		border-bottom: 3px solid #0A1D8A;
+		}}
+		#detail {{
+			font-size: 20;
+			line-height: 1.4em;
+			color: #333333;
+			background-color: transparent;
+			word-wrap: break-word;
+			margin:20px;
+		}}
+		#title {{
+			font-size: 32;
+			line-height: 1.3em;
+			font-weight: bold;
+			color: #222222;
+			background-color: transparent;
+			word-wrap: break-word;
+			margin:20px;
+		}}
+		#category {{
+			font-size: 18;
+			line-height: 1.4em;
+			font-weight: normal;
+			color: #000098;
+			background-color: transparent;
+			word-wrap: break-word;
+			margin-top:0px;
+			margin-bottom:0px;
+			margin-left:20px;
+			text-transform: uppercase;
+		}}
+		#time {{
+			font-size: 15; 
+			color: #7e7e7e; 
+			margin-top:0px;
+			margin-bottom:0px;
+			margin-right:20px;
+			align: right;
+		}}
+		body {{
+			background-color: #F1F5F7;
+			margin:0;
+			padding:0;
+			font-family: Roboto;
+		}}
+	</style>
+</head>
+<body>
+	<img id="image_header" src="{2}"/>
+
+	
+	<div id="title">{0}</div>
+
+	<table width="100%" border="0">
+		<tr>
+			<td><div id="category">{4}</div></td>
+			<td align="right"><div id="time">{1}</div></td>
+		</tr>
+	</table>
+
+	<div id="detail">{3}</div>
+	<br>
+	<br>
+	<br>
+	<br>
+</body>
+</html>

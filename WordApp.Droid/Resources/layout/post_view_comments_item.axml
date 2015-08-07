@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/padding">
+    <RelativeLayout
+        android:layout_width="@dimen/comment_avatar_size"
+        android:layout_height="@dimen/comment_avatar_size"
+        android:background="@drawable/circle_background"
+        local:MvxBind="ShapeBackground UserId"
+        android:layout_marginLeft="@dimen/comment_avatar_margin"
+        android:layout_marginRight="@dimen/comment_avatar_margin"
+        android:layout_marginTop="@dimen/menu_btn_padding">
+        <TextView
+            android:text="A"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_view_comment_item_caption"
+            local:MvxBind="Text UserCaption"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/comment_avatar_font_size" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Time"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/post_view_comment_item_time"
+                local:MvxBind="Text Date, Converter=TimeAgo;"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/padding"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12dp" />
+            <TextView
+                android:text="UserName"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/post_view_comment_item_username"
+                local:MvxBind="Text Name"
+                android:layout_margin="@dimen/padding"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:layout_toLeftOf="@id/post_view_comment_item_time"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+        <TextView
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_view_comment_item_content"
+            local:MvxBind="Text Content"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/padding"
+            android:textSize="16dp"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+</LinearLayout>

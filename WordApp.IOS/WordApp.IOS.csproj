@@ -6,7 +6,7 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{0AA95C06-254F-40C8-82A3-81976EB4D677}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WordApp.IOS</RootNamespace>
+    <RootNamespace>FSoft.WordApp.IOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>WordApp.IOS</AssemblyName>
   </PropertyGroup>
@@ -65,20 +65,273 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\portable-net45+netcore45+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\Xamarin.iOS10\Cirrious.CrossCore.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Binding.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\Xamarin.iOS10\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross">
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.File.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\portable-net45+wp80+win8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Json">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Json.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Visibility">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Visibility.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Visibility.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Visibility.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.Visibility.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.WebBrowser.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.WebBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.WebBrowser.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.WebBrowser.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.DownloadCache">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.DownloadCache.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.DownloadCache.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.DownloadCache.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.DownloadCache.3.5.1\lib\Xamarin.iOS10\Cirrious.MvvmCross.Plugins.DownloadCache.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="EShyMedia.MvvmCross.Plugins.DeviceInfo">
+      <HintPath>..\packages\EShyMedia.MvvmCross.Plugins.DeviceInfo.1.6.0\lib\Xamarin.iOS\EShyMedia.MvvmCross.Plugins.DeviceInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="EShyMedia.MvvmCross.Plugins.DeviceInfo.Touch">
+      <HintPath>..\packages\EShyMedia.MvvmCross.Plugins.DeviceInfo.1.6.0\lib\Xamarin.iOS\EShyMedia.MvvmCross.Plugins.DeviceInfo.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\Xamarin.iOS10\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="XamarinUILib">
+      <HintPath>..\External\Xamarin-Material-Controls-For-IOS\XamarinUILib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-40.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-40%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-40%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-Small-40%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="Views\CatalogView.xib" />
+    <InterfaceDefinition Include="Views\Cells\CategoryPostViewCell.xib" />
+    <InterfaceDefinition Include="Views\Cells\HomeBreakingNewsViewCell.xib" />
+    <InterfaceDefinition Include="Views\Cells\HomeCategoryViewCell.xib" />
+    <InterfaceDefinition Include="Views\Cells\HomePostViewCell.xib" />
+    <InterfaceDefinition Include="Views\Cells\MenuAvatarTableViewCell.xib" />
+    <InterfaceDefinition Include="Views\Cells\MenuCategory.xib" />
+    <InterfaceDefinition Include="Views\Cells\MenuSigtoutViewCell.xib" />
+    <InterfaceDefinition Include="Views\Cells\MenuSubCategory.xib" />
+    <InterfaceDefinition Include="Views\Cells\PostCommentViewCell.xib" />
+    <InterfaceDefinition Include="Views\HomeView.xib" />
+    <InterfaceDefinition Include="Views\LoginView.xib" />
+    <InterfaceDefinition Include="Views\MenuView.xib" />
+    <InterfaceDefinition Include="Views\PostCommentsView.xib" />
+    <InterfaceDefinition Include="Views\PostView.xib" />
+    <InterfaceDefinition Include="Views\RecentPostsView.xib" />
+    <InterfaceDefinition Include="Views\RootView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+    <None Include="ToDo-MvvmCross\_ Touch UI.txt" />
+    <None Include="AppDelegate.cs.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\WebBrowserPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\DeviceInfoPluginBootstrap.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="DebugTrace.cs" />
+    <Compile Include="Views\FirstView.cs" />
+    <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Addons\SidebarController.cs" />
+    <Compile Include="Controls\AlignLabel.cs" />
+    <Compile Include="Extensions\ColorExtention.cs" />
+    <Compile Include="Extensions\ViewExtensions.cs" />
+    <Compile Include="Views\BaseViewController.cs" />
+    <Compile Include="Views\CatalogNewsView.cs" />
+    <Compile Include="Views\CatalogNewsView.designer.cs">
+      <DependentUpon>..\..\..\..\FSB_Projects\FsoftInternalNews\cucumber\Cucumber_native\Cucumber.iOS\Views\CatalogNewsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\CategoryPostViewCell.cs" />
+    <Compile Include="Views\Cells\CategoryPostViewCell.designer.cs">
+      <DependentUpon>..\..\..\..\..\FSB_Projects\FsoftInternalNews\cucumber\Cucumber_native\Cucumber.iOS\Views\Cells\CategoryPostViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\HomeBreakingNewsViewCell.cs" />
+    <Compile Include="Views\Cells\HomeBreakingNewsViewCell.designer.cs">
+      <DependentUpon>..\..\..\..\..\FSB_Projects\FsoftInternalNews\cucumber\Cucumber_native\Cucumber.iOS\Views\Cells\HomeBreakingNewsViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\HomeCategoryViewCell.cs" />
+    <Compile Include="Views\Cells\HomeCategoryViewCell.designer.cs">
+      <DependentUpon>..\..\..\..\..\FSB_Projects\FsoftInternalNews\cucumber\Cucumber_native\Cucumber.iOS\Views\Cells\HomeCategoryViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\HomePostViewCell.cs" />
+    <Compile Include="Views\Cells\HomePostViewCell.designer.cs">
+      <DependentUpon>..\..\..\..\..\FSB_Projects\FsoftInternalNews\cucumber\Cucumber_native\Cucumber.iOS\Views\Cells\HomePostViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\MenuAvatarTableViewCell.cs" />
+    <Compile Include="Views\Cells\MenuAvatarTableViewCell.designer.cs">
+      <DependentUpon>..\..\..\..\..\FSB_Projects\FsoftInternalNews\techinsight\TechInsight\iOS\Views\Cells\MenuAvatarTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\MenuCategoryViewCell.cs" />
+    <Compile Include="Views\Cells\MenuCategoryViewCell.designer.cs">
+      <DependentUpon>..\..\..\..\..\FSB_Projects\FsoftInternalNews\cucumber\Cucumber_native\Cucumber.iOS\Views\Cells\MenuCategoryViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\MenuSigtoutViewCell.cs" />
+    <Compile Include="Views\Cells\MenuSigtoutViewCell.designer.cs">
+      <DependentUpon>..\..\..\..\..\FSB_Projects\FsoftInternalNews\techinsight\TechInsight\iOS\Views\Cells\MenuSigtoutViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\MenuSubCategoryCellView.cs" />
+    <Compile Include="Views\Cells\MenuSubCategoryCellView.designer.cs">
+      <DependentUpon>..\..\..\..\..\FSB_Projects\FsoftInternalNews\cucumber\Cucumber_native\Cucumber.iOS\Views\Cells\MenuSubCategoryCellView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cells\MvxMDTableViewCell.cs" />
+    <Compile Include="Views\Cells\PostCommentViewCell.cs" />
+    <Compile Include="Views\Cells\PostCommentViewCell.designer.cs">
+      <DependentUpon>..\..\..\..\..\FSB_Projects\FsoftInternalNews\cucumber\Cucumber_native\Cucumber.iOS\Views\Cells\PostCommentViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeView.cs" />
+    <Compile Include="Views\HomeView.designer.cs">
+      <DependentUpon>..\..\..\..\..\..\Volumes\Work\Samples\Xamarin\UX_UI\MvvmCross.FlyOutMenu-master\FlyOutMenu.Touch\Views\HomeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.cs" />
+    <Compile Include="Views\LoginView.designer.cs">
+      <DependentUpon>..\..\..\..\FSB_Projects\FsoftInternalNews\cucumber\Cucumber_native\Cucumber.iOS\Views\LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuView.cs" />
+    <Compile Include="Views\MenuView.designer.cs">
+      <DependentUpon>..\..\..\..\..\..\Volumes\Work\Samples\Xamarin\UX_UI\MvvmCross.FlyOutMenu-master\FlyOutMenu.Touch\Views\MenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PostCommentsView.cs" />
+    <Compile Include="Views\PostCommentsView.designer.cs">
+      <DependentUpon>..\..\..\..\FSB_Projects\FsoftInternalNews\cucumber\Cucumber_native\Cucumber.iOS\Views\PostCommentsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PostView.cs" />
+    <Compile Include="Views\PostView.designer.cs">
+      <DependentUpon>..\..\..\..\FSB_Projects\FsoftInternalNews\cucumber\Cucumber_native\Cucumber.iOS\Views\PostView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecentPostsView.cs" />
+    <Compile Include="Views\RecentPostsView.designer.cs">
+      <DependentUpon>..\..\..\..\FSB_Projects\FsoftInternalNews\techinsight\TechInsight\iOS\Views\RecentPostsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RootView.cs" />
+    <Compile Include="Views\RootView.designer.cs">
+      <DependentUpon>..\..\..\..\..\..\Volumes\Work\Samples\Xamarin\UX_UI\MvvmCross.FlyOutMenu-master\FlyOutMenu.Touch\Views\RootView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TableSource\TableSourceCategoryPosts.cs" />
+    <Compile Include="Views\TableSource\TableSourceComments.cs" />
+    <Compile Include="Views\TableSource\TableSourceHomePosts.cs" />
+    <Compile Include="Views\TableSource\TableSourceMenu.cs" />
+    <Compile Include="MvxTouchProtectedData.cs" />
+    <Compile Include="TouchBuildDetails.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <ItemGroup>
+    <BundleResource Include="Resources\.DS_Store" />
+    <BundleResource Include="Resources\back.png" />
+    <BundleResource Include="Resources\back%402x.png" />
+    <BundleResource Include="Resources\banner.png" />
+    <BundleResource Include="Resources\comment.png" />
+    <BundleResource Include="Resources\comment%402x.png" />
+    <BundleResource Include="Resources\cucumberbnplh.png" />
+    <BundleResource Include="Resources\drop_shadow.png" />
+    <BundleResource Include="Resources\home_image_overlay.png" />
+    <BundleResource Include="Resources\like.png" />
+    <BundleResource Include="Resources\like%402x.png" />
+    <BundleResource Include="Resources\logo_cucumber.png" />
+    <BundleResource Include="Resources\logo_fsoft.png" />
+    <BundleResource Include="Resources\logo-fpt.png" />
+    <BundleResource Include="Resources\logo-fpt%402x.png" />
+    <BundleResource Include="Resources\menu.png" />
+    <BundleResource Include="Resources\menu%402x.png" />
+    <BundleResource Include="Resources\narrow down.png" />
+    <BundleResource Include="Resources\narrow down%402x.png" />
+    <BundleResource Include="Resources\narrow up.png" />
+    <BundleResource Include="Resources\narrow up%402x.png" />
+    <BundleResource Include="Resources\no comment.png" />
+    <BundleResource Include="Resources\no comment%402x.png" />
+    <BundleResource Include="Resources\no-like.png" />
+    <BundleResource Include="Resources\no-like%402x.png" />
+    <BundleResource Include="Resources\refresh.png" />
+    <BundleResource Include="Resources\refresh%402x.png" />
+    <BundleResource Include="Resources\Roboto-Black.ttf" />
+    <BundleResource Include="Resources\Roboto-BlackItalic.ttf" />
+    <BundleResource Include="Resources\Roboto-Bold.ttf" />
+    <BundleResource Include="Resources\Roboto-BoldItalic.ttf" />
+    <BundleResource Include="Resources\Roboto-Italic.ttf" />
+    <BundleResource Include="Resources\Roboto-Light.ttf" />
+    <BundleResource Include="Resources\Roboto-LightItalic.ttf" />
+    <BundleResource Include="Resources\Roboto-Medium.ttf" />
+    <BundleResource Include="Resources\Roboto-MediumItalic.ttf" />
+    <BundleResource Include="Resources\Roboto-Regular.ttf" />
+    <BundleResource Include="Resources\Roboto-Thin.ttf" />
+    <BundleResource Include="Resources\Roboto-ThinItalic.ttf" />
+    <BundleResource Include="Resources\send button active.png" />
+    <BundleResource Include="Resources\send button active%402x.png" />
+    <BundleResource Include="Resources\send button.png" />
+    <BundleResource Include="Resources\send button%402x.png" />
+    <BundleResource Include="Resources\shadow_category.png" />
+    <BundleResource Include="Resources\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="Resources\iTunesArtwork.png" />
+    <ITunesArtwork Include="Resources\iTunesArtwork%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WordApp.Core\WordApp.Core.csproj">
+      <Project>{EE8C4693-8E1D-4E90-B789-B3544B31F268}</Project>
+      <Name>WordApp.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/list_post_bgr_color">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/actionbar_height"
+        android:id="@+id/category_news_view_header_layout"
+        android:background="@color/action_bar">
+        <ImageButton
+            android:src="@drawable/back"
+            android:layout_width="@dimen/actionbar_height"
+            android:layout_height="@dimen/actionbar_height"
+            android:id="@+id/category_news_view_btn_menu"
+            android:adjustViewBounds="true"
+            local:MvxBind="Click BackCommand"
+            android:background="?attr/selectableItemBackground"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/menu_btn_padding"
+            android:paddingRight="@dimen/menu_btn_padding"
+            android:paddingBottom="@dimen/menu_btn_padding"
+            android:paddingLeft="@dimen/menu_btn_padding" />
+        <TextView
+            android:text="Cucumber"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/category_news_view_title"
+            local:MvxBind="Text Title"
+            android:paddingLeft="36dp"
+            android:gravity="center_vertical|left"
+            android:layout_gravity="center"
+            android:textColor="@color/action_bar_tint" />
+    </LinearLayout>
+    <MvxListView
+        android:id="@+id/catalog_news_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        local:MvxBind="ItemsSource ListPost; ItemClick CatalogNewsSelected"
+        local:MvxItemTemplate="@layout/catalog_news_item"
+        android:layout_below="@id/category_news_view_header_layout"
+        android:background="@color/background_default" />
+    <ImageView
+        android:src="@drawable/drop_shadow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/category_news_view_header_layout"
+        android:id="@+id/category_news_view_img_overlay"
+        android:scaleType="fitXY" />
+    <ProgressBar
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cat_news_view_progress"
+        local:MvxBind="Visibility IsLoading, Converter=Visibility"
+        android:layout_centerInParent="true"
+        android:indeterminate="true" />
+</RelativeLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/viewpager_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:paddingBottom="@dimen/navigation_height"
+    android:background="@color/list_post_bgr_color">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/home_view_layout"
+        android:layout_marginBottom="@dimen/navigation_height">
+        <RelativeLayout
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/actionbar_height"
+            android:id="@+id/home_view_header_layout"
+            android:background="@color/action_bar">
+            <ImageButton
+                android:src="@drawable/menu"
+                android:layout_width="@dimen/actionbar_height"
+                android:layout_height="@dimen/actionbar_height"
+                android:id="@+id/home_view_btn_menu"
+                android:scaleType="center"
+                local:MvxBind="Click MenuSelectedCommand"
+                android:background="?attr/selectableItemBackground"
+                android:layout_gravity="center"
+                android:paddingTop="@dimen/menu_btn_padding"
+                android:paddingRight="@dimen/menu_btn_padding"
+                android:paddingBottom="@dimen/menu_btn_padding"
+                android:paddingLeft="@dimen/menu_btn_padding"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="false"
+                android:layout_centerVertical="true" />
+            <ImageButton
+                android:src="@drawable/refresh"
+                android:layout_width="@dimen/actionbar_height"
+                android:layout_height="@dimen/actionbar_height"
+                android:id="@+id/home_view_btn_refresh"
+                android:adjustViewBounds="true"
+                local:MvxBind="Click RefreshSelectedCommand"
+                android:background="?attr/selectableItemBackground"
+                android:layout_gravity="center"
+                android:paddingTop="@dimen/menu_btn_padding"
+                android:paddingRight="@dimen/menu_btn_padding"
+                android:paddingBottom="@dimen/menu_btn_padding"
+                android:paddingLeft="@dimen/menu_btn_padding"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+            <TextView
+                android:visibility="visible"
+                android:text="TechInsight"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/action_bar_tint"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="36dp"
+                android:id="@+id/home_view_title"
+                android:gravity="center_vertical|left"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@id/home_view_btn_menu"
+                android:layout_toLeftOf="@id/home_view_btn_refresh" />
+        </RelativeLayout>
+        <GroupedListView
+            android:id="@+id/home_post_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            local:MvxBind="ItemsSource GroupedPosts;ItemClick PostSelectedCommand"
+            local:MvxItemTemplate="@layout/home_view_post_item"
+            android:layout_below="@id/home_view_header_layout"
+            android:divider="@null"
+            android:dividerHeight="10dp"
+            android:background="@color/background_default" />
+        <ImageView
+            android:src="@drawable/drop_shadow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/home_view_header_layout"
+            android:id="@+id/home_view_img_overlay"
+            android:scaleType="fitXY" />
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/home_view_progressbar"
+            android:layout_centerInParent="true"
+            local:MvxBind="Visibility IsLoading, Converter=Visibility" />
+    </RelativeLayout>
+</FrameLayout>
