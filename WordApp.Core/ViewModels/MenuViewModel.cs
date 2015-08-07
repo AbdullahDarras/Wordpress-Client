@@ -62,19 +62,29 @@ namespace FSoft.WordApp.Core.ViewModels
 			}
 		}
 
+		private bool _LoggedIn;
+		public bool LoggedIn {
+			get { return _LoggedIn;}
+			set { SetProperty (ref _LoggedIn, value, "LoggedIn");}
+		}
+
 		public MenuViewModel() {
 			OptionItems = new ObservableCollection<OptionItem> ();
 
-			if (Settings.WP_AuthCookie != null && Settings.WP_AuthCookie.User != null) {
-				DisplayName = Settings.WP_AuthCookie.User.Displayname ?? Settings.WP_USERNAME;
-				Email = Settings.WP_AuthCookie.User.Email;
-				UserId = Settings.WP_AuthCookie.User.Id;
-				UserCaption = Settings.WP_AuthCookie.User.Email.ToUpper () [0] + "";
-			} else {
-				DisplayName = Settings.WP_USERNAME;
-				Email = Settings.WP_USERNAME.Contains("@fsoft")? Settings.WP_USERNAME : Settings.WP_USERNAME + "@fsoft.com.vn";
-				UserId = 0;
-				UserCaption = Settings.WP_USERNAME.ToUpper () [0] + "";
+			LoggedIn = Settings.WP_LOGGED_IN;
+
+			if (LoggedIn) {
+				if (Settings.WP_AuthCookie != null && Settings.WP_AuthCookie.User != null) {
+					DisplayName = Settings.WP_AuthCookie.User.Displayname ?? Settings.WP_USERNAME;
+					Email = Settings.WP_AuthCookie.User.Email;
+					UserId = Settings.WP_AuthCookie.User.Id;
+					UserCaption = Settings.WP_AuthCookie.User.Email.ToUpper () [0] + "";
+				} else {
+					DisplayName = Settings.WP_USERNAME;
+					Email = Settings.WP_USERNAME.Contains ("@fsoft") ? Settings.WP_USERNAME : Settings.WP_USERNAME + "@fsoft.com.vn";
+					UserId = 0;
+					UserCaption = Settings.WP_USERNAME.ToUpper () [0] + "";
+				}
 			}
 		}
 

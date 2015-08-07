@@ -135,7 +135,7 @@
       <HintPath>..\packages\modernhttpclient.2.4.2\lib\Xamarin.iOS10\ModernHttpClient.dll</HintPath>
     </Reference>
     <Reference Include="XamarinUILib">
-      <HintPath>..\External\Xamarin-Material-Controls-For-IOS\XamarinUILib.dll</HintPath>
+      <HintPath>..\packages\MaterialControls.1.0.1\lib\Xamarin.iOS10\XamarinUILib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -192,7 +192,6 @@
     <Compile Include="Bootstrap\DeviceInfoPluginBootstrap.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="DebugTrace.cs" />
-    <Compile Include="Views\FirstView.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Addons\SidebarController.cs" />
     <Compile Include="Controls\AlignLabel.cs" />

@@ -74,9 +74,12 @@ namespace FSoft.WordApp.Core.ViewModels
 			}
 		}
 
-		async public void RefreshData() {
-			//Load Categories
-//			var cats = await Service.GetListCategory (new RequestListCategory ());//loading login view model
+		async public override void RefreshData() {
+			if (Settings.Categories == null && Settings.WP_NEED_LOGIN == false) {
+				var cats = await Service.GetListCategory (new RequestListCategory ());
+				Settings.Categories = cats.Categories;
+			}
+
 			Menu.OptionItems.Clear();
 			if (Settings.Categories.Count == 0) {
 				var cats = await Service.GetListCategory (new RequestListCategory ());
@@ -84,26 +87,8 @@ namespace FSoft.WordApp.Core.ViewModels
 			}
 
 			Menu.AddCategories (true);
-//			foreach (Category cat in Settings.Categories)
-//				if (cat.Visible == 1 && cat.Parent == 0) {
-//					if (cat.Parent == 0) {
-//						Menu.Add(new CategoryOptionItem (cat));
-//					} 
-//
-//				}
 
 			Home.RefreshData ();
-			//Load Home News - used cache later
-//			foreach (Category cat in cats.Categories) {
-				//var posts = await Service.GetCategoryPosts (new RequestCategoryPosts (cat));
-				//Home.AddCategory (cat, posts.Posts);
-//			}
-
-//			var recent_posts = await Service.GetRecentPosts (new RequestRecentPosts());
-//			Home.ListPost.Clear ();
-//			foreach (Post p in Settings.RecentPosts) {
-//				Home.ListPost.Add (p);
-//			}
 		}
 	}
 }

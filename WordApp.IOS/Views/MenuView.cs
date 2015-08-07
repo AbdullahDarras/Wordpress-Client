@@ -64,7 +64,9 @@ namespace FSoft.WordApp.iOS.Views
 			this.CreateBinding (txtUsername).For("Text").To<MenuViewModel> (vm => vm.DisplayName).Apply();
 			this.CreateBinding (txtUserEmail).For("Text").To<MenuViewModel> (vm => vm.Email).Apply();
 			this.CreateBinding (btnSignout).For ("").To<MenuViewModel> (ViewModel => ViewModel.SignoutCommand).Apply ();
-				
+			this.CreateBinding (viewUserInfo).For ("Hidden").To<MenuViewModel> (ViewModel => ViewModel.LoggedIn).WithConversion("Visibility").Apply ();	
+			this.CreateBinding (viewSignout).For ("Hidden").To<MenuViewModel> (ViewModel => ViewModel.LoggedIn).WithConversion("Visibility").Apply ();
+
 			var TableSourceMenu = new TableSourceMenu (tableViewCategories);
 			this.CreateBinding (TableSourceMenu).To<MenuViewModel> (vm => vm.OptionItems).Apply ();
 			this.CreateBinding (TableSourceMenu).For (s => s.SelectionChangedCommand).To<MenuViewModel> (vm => vm.CatalogSelectedCommand).Apply ();
@@ -80,7 +82,8 @@ namespace FSoft.WordApp.iOS.Views
 
 			viewSignout.SetBottom (2*Settings.DeviceInfo.ScreenHeight);
 			viewSignoutDivider.SetWidth (Settings.DeviceInfo.ScreenWidth);
-			tableViewCategories.Frame = new CGRect (0, viewUserInfo.Frame.Bottom, app.SidebarController.MenuWidth, Settings.DeviceInfo.ScreenHeight - viewUserInfo.Frame.Height ); //- viewSignout.Frame.Height
+			System.nfloat startXTableCategories = viewUserInfo.Hidden ? 0 : viewUserInfo.Frame.Bottom;
+			tableViewCategories.Frame = new CGRect (0, startXTableCategories, app.SidebarController.MenuWidth, Settings.DeviceInfo.ScreenHeight - startXTableCategories ); //- viewSignout.Frame.Height
 
 			//lblUserCaption.Center = viewUserCaption.Center;
 		}
