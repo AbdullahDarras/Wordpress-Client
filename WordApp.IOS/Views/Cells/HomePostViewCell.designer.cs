@@ -29,7 +29,7 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	[Register ("HomePostViewCell")]
 	partial class HomePostViewCell

@@ -29,7 +29,7 @@ using Cirrious.MvvmCross.Binding.BindingContext;
 using FSoft.WordApp.Core.Models;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public partial class CategoryPostViewCell : MvxMDTableViewCell
 	{

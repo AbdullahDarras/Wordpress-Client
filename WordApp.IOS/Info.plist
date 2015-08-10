@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>TechInsight</string>
+	<string>WordApp</string>
 	<key>CFBundleIdentifier</key>
-	<string>vn.fpt.fsoft.TechInsight</string>
+	<string>vn.fpt.fsoft.WordApp</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

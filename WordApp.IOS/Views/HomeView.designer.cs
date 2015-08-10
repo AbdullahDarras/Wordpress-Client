@@ -23,7 +23,7 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	[Register ("HomeView")]
 	partial class HomeView

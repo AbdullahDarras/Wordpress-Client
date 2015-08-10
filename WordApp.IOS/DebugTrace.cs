@@ -24,7 +24,7 @@ using System;
 using System.Diagnostics;
 using Cirrious.CrossCore.Platform;
 
-namespace FSoft.WordApp.iOS
+namespace FSoft.WordApp.IOS
 {
     public class DebugTrace : IMvxTrace
     {

@@ -29,7 +29,7 @@ namespace FSoft.WordApp.Core.Services
 
 		public override string ToString ()
 		{
-			return string.Format ("nonce={0}&username={1}&password={2}", Settings.WP_AUTH_COOKIE_NONCE, Settings.WP_USERNAME, Settings.WP_PASSWORD);
+			return string.Format ("nonce={0}&username={1}&password={2}", Settings.WP_AUTH_COOKIE_NONCE, Settings.wpUsername, Settings.wpPassword);
 		}
 	}
 }

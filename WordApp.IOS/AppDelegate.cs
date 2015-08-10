@@ -27,7 +27,7 @@ using Cirrious.CrossCore;
 using Cirrious.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.Touch.Platform;
 
-namespace FSoft.WordApp.iOS
+namespace FSoft.WordApp.IOS
 {
 	[Register ("AppDelegate")]
 	public partial class AppDelegate : MvxApplicationDelegate

@@ -31,7 +31,7 @@ using Cirrious.MvvmCross.Binding.BindingContext;
 using FSoft.WordApp.Core;
 
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public partial class PostCommentsView : BaseViewController, IUITextFieldDelegate
 	{

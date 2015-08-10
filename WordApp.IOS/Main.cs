@@ -27,7 +27,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace FSoft.WordApp.iOS
+namespace FSoft.WordApp.IOS
 {
 	public class Application
 	{

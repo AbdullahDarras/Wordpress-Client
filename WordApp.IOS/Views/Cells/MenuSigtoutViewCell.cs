@@ -26,7 +26,7 @@ using System;
 using Foundation;
 using UIKit;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public partial class MenuSigtoutViewCell : UITableViewCell
 	{

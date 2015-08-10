@@ -22,7 +22,7 @@
 
 using Foundation;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	[Register ("RootView")]
 	partial class RootView

@@ -30,7 +30,7 @@ using FSoft.WordApp.Core.Models;
 using CoreGraphics;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public partial class PostCommentViewCell : MvxTableViewCell//MvxMDTableViewCell
 	{

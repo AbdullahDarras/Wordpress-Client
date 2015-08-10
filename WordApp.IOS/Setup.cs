@@ -29,7 +29,7 @@ using Cirrious.CrossCore;
 using FSoft.WordApp.Core;
 using Cirrious.MvvmCross.Plugins.DownloadCache;
 
-namespace FSoft.WordApp.iOS
+namespace FSoft.WordApp.IOS
 {
 	public class Setup : MvxTouchSetup
 	{

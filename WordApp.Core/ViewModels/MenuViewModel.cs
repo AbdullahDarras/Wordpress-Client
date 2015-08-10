@@ -71,19 +71,19 @@ namespace FSoft.WordApp.Core.ViewModels
 		public MenuViewModel() {
 			OptionItems = new ObservableCollection<OptionItem> ();
 
-			LoggedIn = Settings.WP_LOGGED_IN;
+			LoggedIn = Settings.wpLoggedIn;
 
 			if (LoggedIn) {
 				if (Settings.WP_AuthCookie != null && Settings.WP_AuthCookie.User != null) {
-					DisplayName = Settings.WP_AuthCookie.User.Displayname ?? Settings.WP_USERNAME;
+					DisplayName = Settings.WP_AuthCookie.User.Displayname ?? Settings.wpUsername;
 					Email = Settings.WP_AuthCookie.User.Email;
 					UserId = Settings.WP_AuthCookie.User.Id;
 					UserCaption = Settings.WP_AuthCookie.User.Email.ToUpper () [0] + "";
 				} else {
-					DisplayName = Settings.WP_USERNAME;
-					Email = Settings.WP_USERNAME.Contains ("@fsoft") ? Settings.WP_USERNAME : Settings.WP_USERNAME + "@fsoft.com.vn";
+					DisplayName = Settings.wpUsername;
+					Email = Settings.wpUsername.Contains ("@fsoft") ? Settings.wpUsername : Settings.wpUsername + "@fsoft.com.vn";
 					UserId = 0;
-					UserCaption = Settings.WP_USERNAME.ToUpper () [0] + "";
+					UserCaption = Settings.wpUsername.ToUpper () [0] + "";
 				}
 			}
 		}
@@ -106,7 +106,12 @@ namespace FSoft.WordApp.Core.ViewModels
 				}
 			}
 
-			_OptionItems.Add (new SignoutOptionItem ());
+			if (Settings.wpLoggedIn) {
+				_OptionItems.Add (new SignoutOptionItem ());
+			} else {
+				_OptionItems.Insert (0, new AppInfoOptionItem ());
+			}
+
 			OptionItems.Clear ();
 			OptionItems = _OptionItems;
 			RaisePropertyChanged (() => OptionItems);
@@ -160,7 +165,7 @@ namespace FSoft.WordApp.Core.ViewModels
 			//Close(this);
 			//ShowViewModel<LoginViewModel> ();
 
-			Settings.WP_LOGGED_IN = false;
+			Settings.wpLoggedIn = false;
 
 			if (SignoutSelected != null) {
 				SignoutSelected (this, EventArgs.Empty);

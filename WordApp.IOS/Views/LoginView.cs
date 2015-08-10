@@ -32,7 +32,7 @@ using FSoft.WordApp.Core;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Core;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public partial class LoginView : BaseViewController
 	{

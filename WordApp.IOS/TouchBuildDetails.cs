@@ -24,7 +24,7 @@
 using FSoft.WordApp.Core;
 using UIKit;
 
-namespace FSoft.WordApp.iOS
+namespace FSoft.WordApp.IOS
 {
 	public class TouchBuildDetails : IBuildDetails
 	{

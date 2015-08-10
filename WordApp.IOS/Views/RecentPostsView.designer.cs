@@ -28,7 +28,7 @@
 //
 using Foundation;
 
-namespace FSoft.WordApp.iOS
+namespace FSoft.WordApp.IOS
 {
 	[Register ("RecentPostsView")]
 	partial class RecentPostsView

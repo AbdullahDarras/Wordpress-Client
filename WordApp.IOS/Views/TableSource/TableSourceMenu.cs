@@ -26,7 +26,7 @@ using UIKit;
 using Foundation;
 using FSoft.WordApp.Core.Models;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public class TableSourceMenu : MvxTableViewSource
 	{
@@ -42,12 +42,16 @@ namespace FSoft.WordApp.iOS.Views
 			tableView.RegisterNibForCellReuse(UINib.FromName("MenuCategory", NSBundle.MainBundle), MenuCategoryViewCell.Key);
 			tableView.RegisterNibForCellReuse(UINib.FromName("MenuSubCategory", NSBundle.MainBundle), MenuSubCategoryCellView.Key);
 			tableView.RegisterNibForCellReuse(UINib.FromName("MenuSigtoutViewCell", NSBundle.MainBundle), MenuSigtoutViewCell.Key);
+			tableView.RegisterNibForCellReuse(UINib.FromName("MenuAppInfoTableViewCell", NSBundle.MainBundle), MenuAppInfoTableViewCell.Key);
 		}
 
 		//Define height of Cell follow by type data for cell view
 		public override nfloat GetHeightForRow (UITableView tableView, NSIndexPath indexPath)
 		{
 			var item = GetItemAt (indexPath);
+			if (item is AppInfoOptionItem) {
+				return 100;
+			}
 			return 50;
 
 		}
@@ -75,6 +79,8 @@ namespace FSoft.WordApp.iOS.Views
 					}
 				} else if (item is SignoutOptionItem) {
 					identifier = MenuSigtoutViewCell.Key;
+				}  else if (item is AppInfoOptionItem) {
+					identifier = MenuAppInfoTableViewCell.Key;
 				}
 			} else  {
 				

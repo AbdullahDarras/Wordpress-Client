@@ -33,7 +33,7 @@ using ObjCRuntime;
 using System.Drawing;
 using CoreAnimation;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public partial class PostView : BaseViewController, IUIScrollViewDelegate
 	{

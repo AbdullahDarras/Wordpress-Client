@@ -86,9 +86,9 @@ namespace FSoft.WordApp.Core
 		public const string WP_USERNAME_FIELD = "log";
 		public const string WP_PWD_FIELD = "pwd";
 		public const bool WP_NEED_LOGIN = false;
-		public static bool WP_LOGGED_IN = false;
-		public static string WP_USERNAME = "";
-		public static string WP_PASSWORD = "";
+		public static bool wpLoggedIn = false;
+		public static string wpUsername = "";
+		public static string wpPassword = "";
 
 		public static bool WP_USED_FEATURED_IMAGE = true;
 

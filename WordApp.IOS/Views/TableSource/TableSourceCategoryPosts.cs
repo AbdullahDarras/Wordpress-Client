@@ -27,7 +27,7 @@ using Foundation;
 using FSoft.WordApp.Core.ViewModels;
 using FSoft.WordApp.Core;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public class TableSourceCategoryPosts : MvxTableViewSource
 	{

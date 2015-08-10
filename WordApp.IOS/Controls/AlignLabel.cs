@@ -24,7 +24,7 @@
 using UIKit;
 using Foundation;
 
-namespace FSoft.WordApp.iOS.Control
+namespace FSoft.WordApp.IOS.Control
 {
 	[Register ("AlignLabel")]
 	public class AlignLabel : UILabel

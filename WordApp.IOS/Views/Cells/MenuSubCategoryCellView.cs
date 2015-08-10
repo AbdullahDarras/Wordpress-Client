@@ -28,7 +28,7 @@ using UIKit;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using FSoft.WordApp.Core.Models;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public partial class MenuSubCategoryCellView : MvxMDTableViewCell
 	{

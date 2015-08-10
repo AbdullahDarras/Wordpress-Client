@@ -48,7 +48,7 @@ namespace FSoft.WordApp.Core
 
 		public void Start(object hint = null)
 		{
-			if (Settings.WP_NEED_LOGIN && !Settings.WP_LOGGED_IN)
+			if (Settings.WP_NEED_LOGIN && !Settings.wpLoggedIn)
 			{
 				ShowViewModel<LoginViewModel>();
 			}

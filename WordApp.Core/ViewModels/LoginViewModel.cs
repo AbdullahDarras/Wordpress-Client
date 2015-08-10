@@ -207,7 +207,7 @@ namespace FSoft.WordApp.Core.ViewModels
 			if (Settings.UpdateInfo != null) {
 				if (UpdateClientHandler != null)
 					UpdateClientHandler (this, new UpdateClientEventArgs("Update",Settings.UpdateInfo.Update_info.Message,"OK"));
-			} else if (Settings.WP_LOGGED_IN) {
+			} else if (Settings.wpLoggedIn) {
 				Close (this);
 				ShowViewModel<RootViewModel>();
 			}
@@ -267,9 +267,9 @@ namespace FSoft.WordApp.Core.ViewModels
 					Debug.WriteLine("response.StatusCode " + response.StatusCode);
 					if (response.StatusCode == HttpStatusCode.Redirect) {
 						Debug.WriteLine("Redirect: " + response.ToString());
-						Settings.WP_LOGGED_IN = true;
-						Settings.WP_USERNAME = Username;
-						Settings.WP_PASSWORD = Password;
+						Settings.wpLoggedIn = true;
+						Settings.wpUsername = Username;
+						Settings.wpPassword = Password;
 					} else {
 						string resultContent = await response.Content.ReadAsStringAsync ();
 
@@ -281,9 +281,9 @@ namespace FSoft.WordApp.Core.ViewModels
 							//login failed
 							Error = Settings.MSG_INVALID_USERNAME_OR_PWD;
 						} else {
-							Settings.WP_LOGGED_IN = true;
-							Settings.WP_USERNAME = Username;
-							Settings.WP_PASSWORD = Password;
+							Settings.wpLoggedIn = true;
+							Settings.wpUsername = Username;
+							Settings.wpPassword = Password;
 							var h =response.Headers;
 	//						CookieCollection cks = cookies.GetCookies (new Uri (Settings.LoginUrl));
 							ICollection<Cookie> cks = cookieHandler.Cookies;
@@ -295,7 +295,7 @@ namespace FSoft.WordApp.Core.ViewModels
 						}
 					}
 
-					if (Settings.WP_LOGGED_IN) {
+					if (Settings.wpLoggedIn) {
 						if (Settings.CHECK_UPDATE) {
 							var buildDetail = Mvx.Resolve<IBuildDetails>();
 							var respUpdate = await Service.GetUpdate(new RequestUpdate(buildDetail.OS, buildDetail.VersionCode));
@@ -337,7 +337,7 @@ namespace FSoft.WordApp.Core.ViewModels
 					#endif
 				}
 			} else {
-				Settings.WP_LOGGED_IN = true;
+				Settings.wpLoggedIn = true;
 				Settings.COOKIES = new List<Cookie> ();
 			}
 

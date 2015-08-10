@@ -30,7 +30,7 @@ using Foundation;
 using CoreGraphics;
 using iOSUILib;
 
-namespace FSoft.WordApp.iOS.Views {
+namespace FSoft.WordApp.IOS.Views {
 	
 	public class MvxMDTableViewCell: MDTableViewCell/*UITableViewCell*/,	IMvxBindable 
 	{

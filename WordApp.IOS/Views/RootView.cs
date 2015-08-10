@@ -37,7 +37,7 @@ using Cirrious.MvvmCross.ViewModels;
 using FSoft.WordApp.Core;
 using FSoft.WordApp.Core.Models;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public sealed partial class RootView : MvxViewController
 	{

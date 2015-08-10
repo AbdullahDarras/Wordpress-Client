@@ -27,7 +27,7 @@ using Cirrious.MvvmCross.Touch.Views;
 using Foundation;
 using UIKit;
 
-namespace FSoft.WordApp.iOS
+namespace FSoft.WordApp.IOS
 {
     // This class is never actually executed, but when Xamarin linking is enabled it does ensure types and properties
     // are preserved in the deployed app

@@ -29,7 +29,7 @@ using FSoft.WordApp.Core.Models;
 using System.Drawing;
 using FSoft.WordApp.Core;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public class TableSourceComments : MvxTableViewSource
 	{

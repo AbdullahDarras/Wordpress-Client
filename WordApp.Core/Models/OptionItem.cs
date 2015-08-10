@@ -31,6 +31,7 @@ namespace FSoft.WordApp.Core.Models
 	public enum OptionItemType {
 		Category = 0,
 		Signout = 1,
+		AppInfo = 2,
 	}
 
 	public class SignoutOptionItem: OptionItem {
@@ -38,6 +39,14 @@ namespace FSoft.WordApp.Core.Models
 
 		public SignoutOptionItem() {
 			Type = OptionItemType.Signout;
+		}
+	}
+
+	public class AppInfoOptionItem: OptionItem {
+		public override string Title { get { return "WordApp";}}
+
+		public AppInfoOptionItem() {
+			Type = OptionItemType.AppInfo;
 		}
 	}
 

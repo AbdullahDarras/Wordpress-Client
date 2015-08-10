@@ -28,7 +28,7 @@ using Cirrious.MvvmCross.Binding.BindingContext;
 using FSoft.WordApp.Core.ViewModels;
 using FSoft.WordApp.Core;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public sealed partial class HomeView : BaseViewController
 	{

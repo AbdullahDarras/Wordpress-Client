@@ -28,7 +28,7 @@ using UIKit;
 using System.Drawing;
 using FSoft.WordApp.Core;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public class BaseViewController : MvxViewController
 	{

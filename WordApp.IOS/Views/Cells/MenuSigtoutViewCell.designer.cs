@@ -28,7 +28,7 @@
 //
 using Foundation;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	[Register ("MenuSigtoutViewCell")]
 	partial class MenuSigtoutViewCell

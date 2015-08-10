@@ -30,7 +30,7 @@ using FSoft.WordApp.Core.Models;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.MvvmCross.Binding.BindingContext;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public partial class HomeCategoryViewCell : MvxMDTableViewCell
 	{

@@ -29,7 +29,7 @@ using Cirrious.MvvmCross.Binding.BindingContext;
 using FSoft.WordApp.Core.ViewModels;
 using FSoft.WordApp.Core;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public partial class RecentPostsView : CatalogNewsView
 	{
@@ -39,7 +39,7 @@ namespace FSoft.WordApp.iOS.Views
 			set { 
 				_title = value;
 				if (Settings.RECENT_POST_CATEGORY_TITLE.Equals (_title)) {
-					_title = "TechInsight";
+					//_title = "";
 				}
 				this.NavigationItem.TitleView = CreateNavTitle (_title);
 			}
@@ -62,7 +62,7 @@ namespace FSoft.WordApp.iOS.Views
 			base.ViewDidLoad ();
 			
 			// Perform any additional setup after loading the view, typically from a nib.
-			this.NavigationItem.TitleView = CreateNavTitle ("TechInsight");//
+			this.NavigationItem.TitleView = CreateNavTitle (Settings.RECENT_POST_CATEGORY_TITLE);//
 			//			this.NavigationItem.TitleView.ContentMode = UIViewContentMode.Left;
 			//this.NavigationItem.TitleView.BackgroundColor = UIColor.Red;
 

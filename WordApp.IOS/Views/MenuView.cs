@@ -34,7 +34,7 @@ using Foundation;
 using iOSUILib;
 using FSoft.WordApp.Core;
 
-namespace FSoft.WordApp.iOS.Views
+namespace FSoft.WordApp.IOS.Views
 {
 	public sealed partial class MenuView : BaseViewController
 	{

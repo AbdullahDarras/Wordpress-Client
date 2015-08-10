@@ -37,7 +37,7 @@ namespace FSoft.WordApp.Core.Services
 
 		public override string ToString ()
 		{
-			return string.Format ("name={0}&email={1}&post_id={2}&content={3}&user_id={4}", Settings.WP_USERNAME, Settings.WP_AuthCookie.User.Email??Settings.WP_USERNAME+"@fsoft.com.vn", PostID, Content, Settings.WP_AuthCookie.User.Id);
+			return string.Format ("name={0}&email={1}&post_id={2}&content={3}&user_id={4}", Settings.wpUsername, Settings.WP_AuthCookie.User.Email??Settings.wpUsername+"@fsoft.com.vn", PostID, Content, Settings.WP_AuthCookie.User.Id);
 		}
 	}
 }
