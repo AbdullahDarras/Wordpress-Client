@@ -1,25 +1,9 @@
-// The MIT License (MIT)
+// WARNING
 //
-// Copyright (c) 2015 FPT Software
+// This file has been generated automatically by Xamarin Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-
 using Foundation;
 using System.CodeDom.Compiler;
 
@@ -50,6 +34,12 @@ namespace FSoft.WordApp.IOS.Views
 		iOSUILib.MDTextField txtComment { get; set; }
 
 		[Outlet]
+		iOSUILib.MDTextField txtEmail { get; set; }
+
+		[Outlet]
+		iOSUILib.MDTextField txtName { get; set; }
+
+		[Outlet]
 		UIKit.UIView viewInputComment { get; set; }
 
 		[Outlet]
@@ -59,7 +49,16 @@ namespace FSoft.WordApp.IOS.Views
 		UIKit.UIView viewNoCommentDevider { get; set; }
 
 		[Outlet]
+		UIKit.UIView viewPostCommentNameAndEmail { get; set; }
+
+		[Outlet]
 		UIKit.UIView viewTxtCommentDivider { get; set; }
+
+		[Outlet]
+		UIKit.UIView viewTxtEmailDivider { get; set; }
+
+		[Outlet]
+		UIKit.UIView viewTxtNameDivider { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -116,6 +115,31 @@ namespace FSoft.WordApp.IOS.Views
 			if (viewTxtCommentDivider != null) {
 				viewTxtCommentDivider.Dispose ();
 				viewTxtCommentDivider = null;
+			}
+
+			if (viewPostCommentNameAndEmail != null) {
+				viewPostCommentNameAndEmail.Dispose ();
+				viewPostCommentNameAndEmail = null;
+			}
+
+			if (txtName != null) {
+				txtName.Dispose ();
+				txtName = null;
+			}
+
+			if (txtEmail != null) {
+				txtEmail.Dispose ();
+				txtEmail = null;
+			}
+
+			if (viewTxtNameDivider != null) {
+				viewTxtNameDivider.Dispose ();
+				viewTxtNameDivider = null;
+			}
+
+			if (viewTxtEmailDivider != null) {
+				viewTxtEmailDivider.Dispose ();
+				viewTxtEmailDivider = null;
 			}
 		}
 	}

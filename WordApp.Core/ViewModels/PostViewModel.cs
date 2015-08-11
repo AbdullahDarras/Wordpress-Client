@@ -177,6 +177,8 @@ namespace FSoft.WordApp.Core.ViewModels
 
 		//comment post binding
 		public string CommentText {get;set;}
+		public string  CommentName { get; set;}
+		public string CommentEmail { get; set; }
 		public event EventHandler PostCommentPressed;
 		private Cirrious.MvvmCross.ViewModels.MvxCommand _PostCommentCommand;
 		public System.Windows.Input.ICommand PostCommentCommand
@@ -191,7 +193,8 @@ namespace FSoft.WordApp.Core.ViewModels
 		}
 
 		async public void DoPostComment(){
-			if (string.IsNullOrEmpty (CommentText) || string.IsNullOrEmpty(CommentText.Trim())) {
+			if (string.IsNullOrEmpty (CommentText) || string.IsNullOrEmpty(CommentText.Trim()) || 
+				(!Settings.wpLoggedIn && string.IsNullOrEmpty(CommentEmail.Trim()))) {
 				ShowErrorMessage (Settings.MSG_COMMENT_EMPTY_TEXT_ERROR);
 				return;
 			}
@@ -205,7 +208,12 @@ namespace FSoft.WordApp.Core.ViewModels
 				PostCommentPressed(this, EventArgs.Empty);
 			}
 			IsLoading = true;
-			RequestPostComment req = new RequestPostComment (Post.Id, txtCommentContent);
+			RequestPostComment req = null;
+			if (Settings.wpLoggedIn) {
+				req = new RequestPostComment (Post.Id, txtCommentContent);
+			} else {
+				req = new RequestPostComment (Post.Id, txtCommentContent,CommentName, CommentEmail);
+			}
 			var res = await Service.PostComment (req);
 
 			try {

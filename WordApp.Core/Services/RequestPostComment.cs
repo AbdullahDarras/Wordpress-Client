@@ -28,16 +28,34 @@ namespace FSoft.WordApp.Core.Services
 	{
 		public int PostID;
 		public string Content;
+		public string Name;
+		public string Email;
+		public int UserId;
 
 		public RequestPostComment (int post_id, string content)
 		{
 			PostID = post_id;
 			Content = Uri.EscapeDataString(content);
+
+			if (Settings.wpLoggedIn) {
+				Name = Settings.wpUsername;
+				Email = Settings.WP_AuthCookie.User.Email;
+				UserId = Settings.WP_AuthCookie.User.Id;
+			}
+		}
+
+		public RequestPostComment (int post_id, string content, string name, string email)
+		{
+			PostID = post_id;
+			Content = Uri.EscapeDataString(content);
+			Name = name;
+			Email = email;
+			UserId = -1;
 		}
 
 		public override string ToString ()
 		{
-			return string.Format ("name={0}&email={1}&post_id={2}&content={3}&user_id={4}", Settings.wpUsername, Settings.WP_AuthCookie.User.Email??Settings.wpUsername+"@fsoft.com.vn", PostID, Content, Settings.WP_AuthCookie.User.Id);
+			return string.Format ("comment_author={0}&comment_author_email={1}&post_id={2}&content={3}&user_id={4}", Name, Email, PostID, Content, UserId);
 		}
 	}
 }

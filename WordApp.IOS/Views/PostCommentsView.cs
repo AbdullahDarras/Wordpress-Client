@@ -92,8 +92,11 @@ namespace FSoft.WordApp.IOS.Views
 			this.CreateBinding(lbPostTitle).For("Text").To<PostCommentsViewModel> (vm => vm.NewsTitle).Apply();
 
 			this.CreateBinding (txtComment).For ("Text").To<PostCommentsViewModel> (vm => vm.CommentText).Apply ();
+			this.CreateBinding (txtName).For ("Text").To<PostCommentsViewModel> (vm => vm.CommentName).Apply ();
+			this.CreateBinding (txtEmail).For ("Text").To<PostCommentsViewModel> (vm => vm.CommentEmail).Apply ();
+
 			this.CreateBinding (btnPostComment).For ("TouchUpInside").To<PostCommentsViewModel> (vm => vm.PostCommentCommand).Apply ();
-			//PostCommentsViewModel.LoadPost ();
+
 			isButtonActived = false;
 			txtComment.EditingChanged += (sender, e) => {
 				UITextField t = (UITextField)sender;
@@ -112,6 +115,20 @@ namespace FSoft.WordApp.IOS.Views
 			};
 			txtComment.EditingDidEnd += (object sender, EventArgs e) => {
 				viewTxtCommentDivider.BackgroundColor = UIColor.LightGray;
+			};
+
+			txtName.EditingDidBegin += (object sender, EventArgs e) => {
+				viewTxtNameDivider.BackgroundColor = COLOR_HIGHLIGHT;
+			};
+			txtName.EditingDidEnd += (object sender, EventArgs e) => {
+				viewTxtNameDivider.BackgroundColor = UIColor.LightGray;
+			};
+
+			txtEmail.EditingDidBegin += (object sender, EventArgs e) => {
+				viewTxtEmailDivider.BackgroundColor = COLOR_HIGHLIGHT;
+			};
+			txtEmail.EditingDidEnd += (object sender, EventArgs e) => {
+				viewTxtEmailDivider.BackgroundColor = UIColor.LightGray;
 			};
 
 //			txtComment.Delegate = this;
@@ -143,6 +160,16 @@ namespace FSoft.WordApp.IOS.Views
 			txtComment.SetWidth (Settings.DeviceInfo.ScreenWidth - btnPostComment.Frame.Width - 16);
 			viewTxtCommentDivider.SetWidth (Settings.DeviceInfo.ScreenWidth - btnPostComment.Frame.Width - 16);
 
+			//add name and email field
+			if (!Settings.wpLoggedIn) {
+				viewInputComment.SetHeight (150);
+				txtName.SetWidth (Settings.DeviceInfo.ScreenWidth - btnPostComment.Frame.Width - 16);
+				txtEmail.SetWidth (Settings.DeviceInfo.ScreenWidth - btnPostComment.Frame.Width - 16);
+			} else {
+				viewInputComment.SetHeight (50);
+			}
+
+
 			tableComments.Frame = new CoreGraphics.CGRect (tableComments.Frame.Left, tableComments.Frame.Top, Settings.DeviceInfo.ScreenWidth, viewInputComment.Frame.Top - tableComments.Frame.Top);
 		}
 
@@ -153,14 +180,9 @@ namespace FSoft.WordApp.IOS.Views
 			base.OnKeyboardChanged(visible, keyboardHeight);
 			if (visible) {
 				txtComment.BecomeFirstResponder ();
-				System.Diagnostics.Debug.WriteLine ("keyboard showed");
 				viewInputComment.Frame = new CoreGraphics.CGRect(0,UIScreen.MainScreen.Bounds.Height - viewInputComment.Frame.Height - keyboardHeight, viewInputComment.Frame.Width, viewInputComment.Frame.Height);
-				System.Diagnostics.Debug.WriteLine ("afsdasdfa");
 			} else {
-				System.Diagnostics.Debug.WriteLine ("keyboard hided");
-
 				viewInputComment.Frame = new CoreGraphics.CGRect(0,UIScreen.MainScreen.Bounds.Height - viewInputComment.Frame.Height,viewInputComment.Frame.Width, viewInputComment.Frame.Height);
-
 			}
 			//viewInputComment.LayoutSubviews ();
 		}
