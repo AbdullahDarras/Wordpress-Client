@@ -74,7 +74,6 @@ namespace FSoft.WordApp.Core.Models
         public virtual bool Selected { get; set; }
         public virtual string Icon { get { return 
                 Title.ToLower().TrimEnd('s') + ".png" ; } }
-//        public ImageSource IconSource { get { return ImageSource.FromFile(Icon); } }
     }
 
 }

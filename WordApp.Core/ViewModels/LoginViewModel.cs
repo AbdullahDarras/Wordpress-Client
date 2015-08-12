@@ -208,8 +208,10 @@ namespace FSoft.WordApp.Core.ViewModels
 				if (UpdateClientHandler != null)
 					UpdateClientHandler (this, new UpdateClientEventArgs("Update",Settings.UpdateInfo.Update_info.Message,"OK"));
 			} else if (Settings.wpLoggedIn) {
+				Settings.Categories = null; //force to refresh
 				Close (this);
-				ShowViewModel<RootViewModel>();
+				Settings.RootViewModel.RefreshData ();
+				//ShowViewModel<RootViewModel>();
 			}
 		}
 
@@ -230,116 +232,76 @@ namespace FSoft.WordApp.Core.ViewModels
 
 			Settings.UseTreeMenu = UseTreeMenu;
 
-			if (Settings.WP_NEED_LOGIN) {
-				try {
-					var content = new FormUrlEncodedContent (new[] {
-						new KeyValuePair<string, string> (Settings.WP_USERNAME_FIELD, Username),
-						new KeyValuePair<string, string> (Settings.WP_PWD_FIELD, Password)
-					});
+			try {
+				var content = new FormUrlEncodedContent (new[] {
+					new KeyValuePair<string, string> (Settings.WP_USERNAME_FIELD, Username),
+					new KeyValuePair<string, string> (Settings.WP_PWD_FIELD, Password)
+				});
 
-					NativeCookieHandler cookieHandler = Settings.mNativeCookieHandler;//new NativeCookieHandler ();
-					NativeMessageHandler handler = new NativeMessageHandler(true,true,cookieHandler){
+				NativeCookieHandler cookieHandler = Settings.mNativeCookieHandler;//new NativeCookieHandler ();
+				NativeMessageHandler handler = new NativeMessageHandler(true,true,cookieHandler){
 					UseCookies = true,
-					};
+				};
 
-					handler.AllowAutoRedirect = false;
-					HttpClient client = new HttpClient (handler);
+				handler.AllowAutoRedirect = false;
+				HttpClient client = new HttpClient (handler);
 
-					HttpResponseMessage response =  await client.PostAsync (Settings.LoginUrl, content);
+				HttpResponseMessage response =  await client.PostAsync (Settings.LoginUrl, content);
 
-					var headers = response.Headers.GetEnumerator();
-					while (headers.MoveNext()) {
-						var h = headers.Current;
-						if (h.Key.Equals("Set-Cookie")) {
-							var v = h.Value;
-							Debug.WriteLine("LoginViewModel header {0}={1}", h.Key, h.Value.ElementAt(0));
-							Settings.COOKIES_STR.Add(h.Value.ElementAt(0));
-						}
-					}
+				if (response.StatusCode == HttpStatusCode.Redirect) {
+					Debug.WriteLine("Redirect: " + response.ToString());
+					Settings.wpLoggedIn = true;
+					Settings.wpUsername = Username;
+					Settings.wpPassword = Password;
+				} else {
+					string resultContent = await response.Content.ReadAsStringAsync ();
 
-
-					ICollection<Cookie> ckst = cookieHandler.Cookies;
-					Debug.WriteLineIf(Debugger.IsAttached, "LoginViewModel COOKIES");
-					foreach (Cookie cookie in ckst)
-						Debug.WriteLineIf(Debugger.IsAttached, "LoginViewModel GET cookie: " + cookie.Name + ": " + cookie.Value);
-					Settings.COOKIES = ckst;
-
-					Debug.WriteLine("response.StatusCode " + response.StatusCode);
-					if (response.StatusCode == HttpStatusCode.Redirect) {
-						Debug.WriteLine("Redirect: " + response.ToString());
+					response.EnsureSuccessStatusCode ();
+					string responseUri = response.RequestMessage.RequestUri.ToString ();
+					Debug.WriteLine (responseUri);
+					Debug.WriteLine(resultContent);
+					if (Settings.LoginUrl.ToLower ().Equals (responseUri.ToLower ())) {
+						//login failed
+						Error = Settings.MSG_INVALID_USERNAME_OR_PWD;
+					} else {
 						Settings.wpLoggedIn = true;
 						Settings.wpUsername = Username;
 						Settings.wpPassword = Password;
-					} else {
-						string resultContent = await response.Content.ReadAsStringAsync ();
-
-						response.EnsureSuccessStatusCode ();
-						string responseUri = response.RequestMessage.RequestUri.ToString ();
-						Debug.WriteLine (responseUri);
-						Debug.WriteLine(resultContent);
-						if (Settings.LoginUrl.ToLower ().Equals (responseUri.ToLower ())) {
-							//login failed
-							Error = Settings.MSG_INVALID_USERNAME_OR_PWD;
-						} else {
-							Settings.wpLoggedIn = true;
-							Settings.wpUsername = Username;
-							Settings.wpPassword = Password;
-							var h =response.Headers;
-	//						CookieCollection cks = cookies.GetCookies (new Uri (Settings.LoginUrl));
-							ICollection<Cookie> cks = cookieHandler.Cookies;
-							Debug.WriteLineIf(Debugger.IsAttached, "HAS COOKIE:");
-							foreach (Cookie cookie in cks)
-								Debug.WriteLineIf(Debugger.IsAttached, "GET cookie: " + cookie.Name + ": " + cookie.Value);
-
-							Settings.COOKIES = cks;
-						}
 					}
-
-					if (Settings.wpLoggedIn) {
-						if (Settings.CHECK_UPDATE) {
-							var buildDetail = Mvx.Resolve<IBuildDetails>();
-							var respUpdate = await Service.GetUpdate(new RequestUpdate(buildDetail.OS, buildDetail.VersionCode));
-							if (respUpdate.Update_info != null) {
-								System.Diagnostics.Debug.WriteLine("HAS Update info");
-								Settings.UpdateInfo = respUpdate;
-								IsLoading = false;
-								return;
-							}
-
-							System.Diagnostics.Debug.WriteLine("Build detail os={0} version_code={1}", buildDetail.OS, buildDetail.VersionCode);
-						}
-						//go to profile to get more cookies
-						response = await client.GetAsync(Settings.ProfileUrl);
-
-						//get user info and gen cookie for json api auth controller
-						var retAuth = await Service.GenrateAuthCookie();
-
-						if (retAuth != null) {
-							Settings.WP_AuthCookie = retAuth;
-						} else {
-							Settings.WP_AuthCookie = null;
-						}
-
-						//load categories
-						var cats = await Service.GetListCategory (new RequestListCategory ());
-						Settings.Categories = cats.Categories;
-
-						//var recent_posts = await Service.GetRecentPosts (new RequestRecentPosts());
-						//Settings.RecentPosts = recent_posts.Posts;
-
-						//LoadHomePosts();
-					}
-				} catch (Exception e ){
-					Error = Settings.MSG_NETWORK_COMMON;
-					#if DEBUG
-					System.Diagnostics.Debug.WriteLine("Login Error: " + e.Message);
-					Error += e.ToString();
-					#endif
 				}
-			} else {
-				Settings.wpLoggedIn = true;
-				Settings.COOKIES = new List<Cookie> ();
-			}
+
+				if (Settings.wpLoggedIn) {
+					if (Settings.CHECK_UPDATE) {
+						var buildDetail = Mvx.Resolve<IBuildDetails>();
+						var respUpdate = await Service.GetUpdate(new RequestUpdate(buildDetail.OS, buildDetail.VersionCode));
+						if (respUpdate.Update_info != null) {
+							Settings.UpdateInfo = respUpdate;
+							IsLoading = false;
+							return;
+						}
+
+						System.Diagnostics.Debug.WriteLine("Build detail os={0} version_code={1}", buildDetail.OS, buildDetail.VersionCode);
+					}
+					//go to profile to get more cookies
+					response = await client.GetAsync(Settings.ProfileUrl);
+
+					//get user info and gen cookie for json api auth controller
+					var retAuth = await Service.GenrateAuthCookie();
+
+					if (retAuth != null) {
+						Settings.WP_AuthCookie = retAuth;
+					} else {
+						Settings.WP_AuthCookie = null;
+					}
+				}
+			} catch (Exception e ){
+				Error = Settings.MSG_NETWORK_COMMON;
+				#if DEBUG
+				System.Diagnostics.Debug.WriteLine("Login Error: " + e.Message);
+				Error += e.ToString();
+				#endif
+			}				
+
 
 			Info = string.Empty;
 			IsLoading = false;

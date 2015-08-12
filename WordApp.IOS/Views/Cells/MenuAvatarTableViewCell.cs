@@ -39,9 +39,9 @@ namespace FSoft.WordApp.IOS.Views
 		public MenuAvatarTableViewCell (IntPtr handle) : base (handle)
 		{
 			this.DelayBind(() => {
-				this.CreateBindingSet<MenuAvatarTableViewCell, MenuViewModel > ().Bind(lbUserAvatarCaption).To (item => item.UserCaption).Apply();	
-				this.CreateBindingSet<MenuAvatarTableViewCell, MenuViewModel > ().Bind(lbUserName).To(item=>item.DisplayName).Apply();
-				this.CreateBindingSet<MenuAvatarTableViewCell, MenuViewModel > ().Bind(lbUserEmail).To(item=>item.Email).Apply();
+				this.CreateBindingSet<MenuAvatarTableViewCell, WPUser > ().Bind(lbUserAvatarCaption).To (item => item.Capitalize).Apply();	
+				this.CreateBindingSet<MenuAvatarTableViewCell, WPUser > ().Bind(lbUserName).To(item=>item.Displayname).Apply();
+				this.CreateBindingSet<MenuAvatarTableViewCell, WPUser > ().Bind(lbUserEmail).To(item=>item.Email).Apply();
 			});
 
 			LayoutMargins = UIEdgeInsets.Zero;

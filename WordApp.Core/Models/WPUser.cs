@@ -29,7 +29,7 @@ namespace FSoft.WordApp.Core.Models
 		public bool Administrator { get; set; }
 	}
 
-	public class WPUser
+	public class WPUser : OptionItem
 	{
 		public int Id { get; set; }
 		public string Username { get; set; }
@@ -44,6 +44,7 @@ namespace FSoft.WordApp.Core.Models
 		public string Description { get; set; }
 		public WPCapabilities Capabilities { get; set; }
 		public string Avatar { get; set; }
+		public string Capitalize { get; set;}
 	}
 }
 

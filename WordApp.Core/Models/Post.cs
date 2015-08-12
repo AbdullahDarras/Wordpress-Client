@@ -133,7 +133,7 @@ namespace FSoft.WordApp.Core.Models
 		public CustomFields custom_fields { get; set; }
 		public string thumbnail_size { get; set; }
 		private ThumbnailImages _Thumbnail_images;
-		public ThumbnailImages __Thumbnail_images {
+		public ThumbnailImages Thumbnail_images {
 			get { 
 				return _Thumbnail_images;
 			} 

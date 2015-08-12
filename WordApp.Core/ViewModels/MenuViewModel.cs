@@ -26,6 +26,7 @@ using System.Collections.ObjectModel;
 using FSoft.WordApp.Core.Models;
 using System;
 using Cirrious.CrossCore;
+using FSoft.WordApp.Core.Services;
 
 namespace FSoft.WordApp.Core.ViewModels
 {
@@ -35,29 +36,15 @@ namespace FSoft.WordApp.Core.ViewModels
 		public event EventHandler MenuSelected;
 		public event EventHandler SignoutSelected;
 
-		public string DisplayName { get; set;}
-		public string Email { get; set;}
-		public int UserId {get;set;}
-		public string UserCaption {get;set;}
-		private Author _Author;
-		public Author Author {
+		private WPUser _User;
+		public WPUser User {
 			get {
-				return _Author;
+				return _User;
 			}
 			set {
-				_Author = value;
-				if (_Author != null) {
-					UserId = _Author.id;
-					if (_Author == null) {
-
-						if (!string.IsNullOrEmpty (_Author.slug)) {
-							UserCaption = _Author.slug.ToUpper () [0] + "";
-						} else {
-							UserCaption = _Author.name.ToUpper () [0] + "";
-						}
-					} else {
-						UserCaption = DisplayName.ToUpper () [0] + "";
-					}
+				_User = value;
+				if (_User != null) {
+					
 				}
 			}
 		}
@@ -71,21 +58,33 @@ namespace FSoft.WordApp.Core.ViewModels
 		public MenuViewModel() {
 			OptionItems = new ObservableCollection<OptionItem> ();
 
+
+		}
+
+		async public void RefreshData(IFNewsService Service){
 			LoggedIn = Settings.wpLoggedIn;
 
 			if (LoggedIn) {
 				if (Settings.WP_AuthCookie != null && Settings.WP_AuthCookie.User != null) {
-					DisplayName = Settings.WP_AuthCookie.User.Displayname ?? Settings.wpUsername;
-					Email = Settings.WP_AuthCookie.User.Email;
-					UserId = Settings.WP_AuthCookie.User.Id;
-					UserCaption = Settings.WP_AuthCookie.User.Email.ToUpper () [0] + "";
+					Settings.WP_AuthCookie.User.Capitalize = Settings.WP_AuthCookie.User.Displayname.ToUpper () [0] + "";
+					User = Settings.WP_AuthCookie.User;
 				} else {
-					DisplayName = Settings.wpUsername;
-					Email = Settings.wpUsername.Contains ("@fsoft") ? Settings.wpUsername : Settings.wpUsername + "@fsoft.com.vn";
-					UserId = 0;
-					UserCaption = Settings.wpUsername.ToUpper () [0] + "";
+
 				}
 			}
+
+			if (Settings.Categories == null) {
+				var cats = await Service.GetListCategory (new RequestListCategory ());
+				Settings.Categories = cats.Categories;
+			}
+
+			OptionItems.Clear();
+			if (Settings.Categories.Count == 0) {
+				var cats = await Service.GetListCategory (new RequestListCategory ());
+				Settings.Categories = cats.Categories;
+			}
+
+			AddCategories (true);
 		}
 
 		public void AddCategories(bool clean) {
@@ -107,6 +106,7 @@ namespace FSoft.WordApp.Core.ViewModels
 			}
 
 			if (Settings.wpLoggedIn) {
+				_OptionItems.Insert (0, User);
 				_OptionItems.Add (new SignoutOptionItem ());
 			} else {
 				_OptionItems.Insert (0, new AppInfoOptionItem ());
@@ -134,18 +134,40 @@ namespace FSoft.WordApp.Core.ViewModels
 
 		private void DoSelectCatalog(OptionItem item)
 		{
+			if (MenuSelected != null)
+				MenuSelected (this, new MenuEventArgs (item));
+			
 			if (item.Type == OptionItemType.Category) {
-				if (MenuSelected != null)
-					MenuSelected(this, new MenuEventArgs(item));
 				if (Settings.USE_RECENT_POSTS) {
 					//ShowViewModel<RecentPostsViewModel>(new {CategoryId = item.Id, CategoryName=item.Title});
 				} else {
-					ShowViewModel<CatalogNewsViewModel>(new {CategoryId = item.Id, CategoryName=item.Title});
+					ShowViewModel<CatalogNewsViewModel> (new {CategoryId = item.Id, CategoryName = item.Title});
 				}
+			} else if (item.Type == OptionItemType.AppInfo) {
+				DoShowLoginView ();
 			} else if (item.Type == OptionItemType.Signout){
 				SignoutCommand.Execute (null);
 			}
 
+		}
+
+		private Cirrious.MvvmCross.ViewModels.MvxCommand _ShowLoginViewCommand;
+		public System.Windows.Input.ICommand ShowLoginViewCommand
+		{
+			get
+			{
+				_ShowLoginViewCommand = _ShowLoginViewCommand ?? new Cirrious.MvvmCross.ViewModels.MvxCommand(DoShowLoginView);
+				return _ShowLoginViewCommand;
+			}
+		}
+
+		async private void DoShowLoginView()
+		{
+
+			Settings.wpLoggedIn = false;
+
+			Close(this);
+			ShowViewModel<LoginViewModel> ();
 		}
 
 		private Cirrious.MvvmCross.ViewModels.MvxCommand _signoutCommand;

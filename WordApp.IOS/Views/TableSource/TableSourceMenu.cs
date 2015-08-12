@@ -25,6 +25,7 @@ using Cirrious.MvvmCross.Binding.Touch.Views;
 using UIKit;
 using Foundation;
 using FSoft.WordApp.Core.Models;
+using CoreGraphics;
 
 namespace FSoft.WordApp.IOS.Views
 {
@@ -35,7 +36,7 @@ namespace FSoft.WordApp.IOS.Views
 //			tableView.Frame.Width = 375;
 //			tableView.Frame.Height = 667;
 
-			tableView.Frame = new CoreGraphics.CGRect (0,0,375,667);
+//			tableView.Frame = new CoreGraphics.CGRect (0,0,375,667);
 
 
 			tableView.RegisterNibForCellReuse(UINib.FromName("MenuAvatarTableViewCell", NSBundle.MainBundle), MenuAvatarTableViewCell.Key);
@@ -51,7 +52,10 @@ namespace FSoft.WordApp.IOS.Views
 			var item = GetItemAt (indexPath);
 			if (item is AppInfoOptionItem) {
 				return 100;
-			}
+			} 
+
+			if (item is WPUser)
+				return 123;
 			return 50;
 
 		}
@@ -81,15 +85,29 @@ namespace FSoft.WordApp.IOS.Views
 					identifier = MenuSigtoutViewCell.Key;
 				}  else if (item is AppInfoOptionItem) {
 					identifier = MenuAppInfoTableViewCell.Key;
+				} else if (item is WPUser) {
+					identifier = MenuAvatarTableViewCell.Key;
 				}
-			} else  {
-				
-			}
+			} 
 			var cell = (UITableViewCell)tableView.DequeueReusableCell(identifier, indexPath);
-
+			if (item is WPUser) {
+				UIView av = cell.ViewWithTag (100);
+				if (av != null)
+				setRoundedView (av, av.Frame.Width);
+			}
 			cell.BackgroundColor = bgUnselected;
 			cell.SelectedBackgroundView = bgSelected;
 			return cell;
+		}
+
+
+		public void setRoundedView(UIView roundedView, nfloat newSize)
+		{
+			CGPoint saveCenter = roundedView.Center;
+			CGRect newFrame = new CGRect(roundedView.Frame.X, roundedView.Frame.Y, newSize, newSize);//CGRectMake(roundedView.frame.origin.x, roundedView.frame.origin.y, newSize, newSize);
+			roundedView.Frame = newFrame;
+			roundedView.Layer.CornerRadius = newSize / (float)2.0;
+			roundedView.Center = saveCenter;
 		}
 	}
 }

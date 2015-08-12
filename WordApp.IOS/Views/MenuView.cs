@@ -57,15 +57,8 @@ namespace FSoft.WordApp.IOS.Views
 		{
 			base.ViewDidLoad ();
 
-			this.setRoundedView (viewUserCaption, (float)viewUserCaption.Frame.Width);
+			//this.setRoundedView (viewUserCaption, (float)viewUserCaption.Frame.Width);
 
-			// Perform any additional setup after loading the view, typically from a nib.
-			this.CreateBinding(lblUserCaption).For("Text").To<MenuViewModel> (vm => vm.UserCaption).Apply();
-			this.CreateBinding (txtUsername).For("Text").To<MenuViewModel> (vm => vm.DisplayName).Apply();
-			this.CreateBinding (txtUserEmail).For("Text").To<MenuViewModel> (vm => vm.Email).Apply();
-			this.CreateBinding (btnSignout).For ("").To<MenuViewModel> (ViewModel => ViewModel.SignoutCommand).Apply ();
-			this.CreateBinding (viewUserInfo).For ("Hidden").To<MenuViewModel> (ViewModel => ViewModel.LoggedIn).WithConversion("Visibility").Apply ();	
-			this.CreateBinding (viewSignout).For ("Hidden").To<MenuViewModel> (ViewModel => ViewModel.LoggedIn).WithConversion("Visibility").Apply ();
 
 			var TableSourceMenu = new TableSourceMenu (tableViewCategories);
 			this.CreateBinding (TableSourceMenu).To<MenuViewModel> (vm => vm.OptionItems).Apply ();
@@ -80,27 +73,7 @@ namespace FSoft.WordApp.IOS.Views
 		private void Relayout() {
 			AppDelegate app = UIApplication.SharedApplication.Delegate as AppDelegate;
 
-			viewSignout.SetBottom (2*Settings.DeviceInfo.ScreenHeight);
-			viewSignoutDivider.SetWidth (Settings.DeviceInfo.ScreenWidth);
-			System.nfloat startXTableCategories = viewUserInfo.Hidden ? 0 : viewUserInfo.Frame.Bottom;
-			tableViewCategories.Frame = new CGRect (0, startXTableCategories, app.SidebarController.MenuWidth, Settings.DeviceInfo.ScreenHeight - startXTableCategories ); //- viewSignout.Frame.Height
-
-			//lblUserCaption.Center = viewUserCaption.Center;
 		}
-
-
-
-		public void setRoundedView(UIView roundedView, float newSize)
-		{
-			CGPoint saveCenter = roundedView.Center;
-			CGRect newFrame = new CGRect(roundedView.Frame.X, roundedView.Frame.Y, newSize, newSize);//CGRectMake(roundedView.frame.origin.x, roundedView.frame.origin.y, newSize, newSize);
-			roundedView.Frame = newFrame;
-			roundedView.Layer.CornerRadius = newSize / (float)2.0;
-			roundedView.Center = saveCenter;
-		}
-
-
-
 	}
 }
 

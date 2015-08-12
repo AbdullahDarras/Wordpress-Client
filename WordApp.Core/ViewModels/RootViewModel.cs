@@ -43,6 +43,7 @@ namespace FSoft.WordApp.Core.ViewModels
 			Menu = new MenuViewModel();
 			Service = service;
 
+			Settings.RootViewModel = this;
 			Mvx.Trace ("Init RootViewModel");
 		}
 		private BaseViewModel _home;
@@ -75,19 +76,8 @@ namespace FSoft.WordApp.Core.ViewModels
 		}
 
 		async public override void RefreshData() {
-			if (Settings.Categories == null && Settings.WP_NEED_LOGIN == false) {
-				var cats = await Service.GetListCategory (new RequestListCategory ());
-				Settings.Categories = cats.Categories;
-			}
-
-			Menu.OptionItems.Clear();
-			if (Settings.Categories.Count == 0) {
-				var cats = await Service.GetListCategory (new RequestListCategory ());
-				Settings.Categories = cats.Categories;
-			}
-
-			Menu.AddCategories (true);
-
+			
+			Menu.RefreshData (Service);
 			Home.RefreshData ();
 		}
 	}

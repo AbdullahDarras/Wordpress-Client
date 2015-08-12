@@ -121,6 +121,8 @@ namespace FSoft.WordApp.Core
 		public const int PADDING_IOS = 16;
 		public static DeviceInfo DeviceInfo;
 
+		public static RootViewModel RootViewModel;
+
 		public Settings ()
 		{
 		}

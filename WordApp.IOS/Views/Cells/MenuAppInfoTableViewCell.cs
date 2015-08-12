@@ -3,6 +3,8 @@ using System;
 
 using Foundation;
 using UIKit;
+using Cirrious.MvvmCross.Binding.BindingContext;
+using FSoft.WordApp.Core.ViewModels;
 
 namespace FSoft.WordApp.IOS.Views
 {
@@ -13,6 +15,9 @@ namespace FSoft.WordApp.IOS.Views
 
 		public MenuAppInfoTableViewCell (IntPtr handle) : base (handle)
 		{
+			this.DelayBind(() => {
+				//this.CreateBindingSet<MenuAppInfoTableViewCell, MenuViewModel > ().Bind(btnLogin).For("TouchUpInside").To (item => item.ShowLoginViewCommand).Apply();	
+			});
 		}
 
 		public static MenuAppInfoTableViewCell Create ()

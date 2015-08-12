@@ -16,11 +16,12 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="cST-EL-ykO">
                         <rect key="frame" x="0.0" y="0.0" width="339" height="100"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WordApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8A5-kY-eKm">
-                        <rect key="frame" x="75" y="32" width="175" height="36"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WordApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8A5-kY-eKm">
+                        <rect key="frame" x="8" y="32" width="175" height="36"/>
                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.023811070409999999" green="1" blue="0.085165503710000007" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="3" height="3"/>
                     </label>
                 </subviews>
             </tableViewCellContentView>

@@ -28,9 +28,14 @@ namespace FSoft.WordApp.Core.Models {
 			get;
 			set;
 		}
+		private string _Name;
 		public string Name {
-			get;
-			set;
+			get { return _Name;}
+			set { 
+				_Name = value; 
+				if (!string.IsNullOrEmpty(_Name))
+					UserCapitalize = _Name.ToUpper () [0] + "";
+			}
 		}
 		public string Url {
 			get;
@@ -60,12 +65,12 @@ namespace FSoft.WordApp.Core.Models {
 					if (_Author == null) {
 
 						if (!string.IsNullOrEmpty (_Author.slug)) {
-							UserCaption = _Author.slug.ToUpper () [0] + "";
+							UserCapitalize = _Author.slug.ToUpper () [0] + "";
 						} else {
-							UserCaption = _Author.name.ToUpper () [0] + "";
+							UserCapitalize = _Author.name.ToUpper () [0] + "";
 						}
 					} else {
-						UserCaption = string.IsNullOrEmpty(Name) ? "" : Name.ToUpper () [0] + "";
+						UserCapitalize = string.IsNullOrEmpty(Name) ? "" : Name.ToUpper () [0] + "";
 					}
 				}
 			}
@@ -75,7 +80,7 @@ namespace FSoft.WordApp.Core.Models {
 			set;
 		}
 		//first charater of user name
-		public string UserCaption {
+		public string UserCapitalize {
 			get;
 			set;
 		}

@@ -40,7 +40,7 @@ namespace FSoft.WordApp.IOS.Views
 		public PostCommentViewCell (IntPtr handle) : base (handle)
 		{
 			this.DelayBind(() => {
-				this.CreateBindingSet<PostCommentViewCell, Comment>().Bind(lbUserCaption).To(item => item.UserCaption).Apply();
+				this.CreateBindingSet<PostCommentViewCell, Comment>().Bind(lbUserCaption).To(item => item.UserCapitalize).Apply();
 				this.CreateBindingSet<PostCommentViewCell, Comment>().Bind(lbUsername).To(item => item.Name).Apply();
 				this.CreateBindingSet<PostCommentViewCell, Comment>().Bind(lbTime).To(item => item.Date).WithConversion("TimeAgo").Apply();
 				this.CreateBindingSet<PostCommentViewCell, Comment>().Bind(lbComment).To(item => item.Content).Apply();
