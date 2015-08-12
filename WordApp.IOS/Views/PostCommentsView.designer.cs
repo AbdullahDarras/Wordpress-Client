@@ -40,6 +40,9 @@ namespace FSoft.WordApp.IOS.Views
 		iOSUILib.MDTextField txtName { get; set; }
 
 		[Outlet]
+		UIKit.UIView viewCommentTextAndSend { get; set; }
+
+		[Outlet]
 		UIKit.UIView viewInputComment { get; set; }
 
 		[Outlet]
@@ -97,6 +100,16 @@ namespace FSoft.WordApp.IOS.Views
 				txtComment = null;
 			}
 
+			if (txtEmail != null) {
+				txtEmail.Dispose ();
+				txtEmail = null;
+			}
+
+			if (txtName != null) {
+				txtName.Dispose ();
+				txtName = null;
+			}
+
 			if (viewInputComment != null) {
 				viewInputComment.Dispose ();
 				viewInputComment = null;
@@ -107,14 +120,14 @@ namespace FSoft.WordApp.IOS.Views
 				viewNoComment = null;
 			}
 
+			if (viewCommentTextAndSend != null) {
+				viewCommentTextAndSend.Dispose ();
+				viewCommentTextAndSend = null;
+			}
+
 			if (viewNoCommentDevider != null) {
 				viewNoCommentDevider.Dispose ();
 				viewNoCommentDevider = null;
-			}
-
-			if (viewTxtCommentDivider != null) {
-				viewTxtCommentDivider.Dispose ();
-				viewTxtCommentDivider = null;
 			}
 
 			if (viewPostCommentNameAndEmail != null) {
@@ -122,24 +135,19 @@ namespace FSoft.WordApp.IOS.Views
 				viewPostCommentNameAndEmail = null;
 			}
 
-			if (txtName != null) {
-				txtName.Dispose ();
-				txtName = null;
-			}
-
-			if (txtEmail != null) {
-				txtEmail.Dispose ();
-				txtEmail = null;
-			}
-
-			if (viewTxtNameDivider != null) {
-				viewTxtNameDivider.Dispose ();
-				viewTxtNameDivider = null;
+			if (viewTxtCommentDivider != null) {
+				viewTxtCommentDivider.Dispose ();
+				viewTxtCommentDivider = null;
 			}
 
 			if (viewTxtEmailDivider != null) {
 				viewTxtEmailDivider.Dispose ();
 				viewTxtEmailDivider = null;
+			}
+
+			if (viewTxtNameDivider != null) {
+				viewTxtNameDivider.Dispose ();
+				viewTxtNameDivider = null;
 			}
 		}
 	}

@@ -158,17 +158,19 @@ namespace FSoft.WordApp.IOS.Views
 
 			btnPostComment.SetRight (Settings.DeviceInfo.ScreenWidth - 8);
 			txtComment.SetWidth (Settings.DeviceInfo.ScreenWidth - btnPostComment.Frame.Width - 16);
-			viewTxtCommentDivider.SetWidth (Settings.DeviceInfo.ScreenWidth - btnPostComment.Frame.Width - 16);
+			//viewTxtCommentDivider.SetWidth (Settings.DeviceInfo.ScreenWidth - btnPostComment.Frame.Width - 16);
 
 			//add name and email field
 			if (!Settings.wpLoggedIn) {
-				viewInputComment.SetHeight (150);
+				viewInputComment.SetHeight (50);
 				txtName.SetWidth (Settings.DeviceInfo.ScreenWidth - btnPostComment.Frame.Width - 16);
 				txtEmail.SetWidth (Settings.DeviceInfo.ScreenWidth - btnPostComment.Frame.Width - 16);
 			} else {
 				viewInputComment.SetHeight (50);
 			}
-
+			viewPostCommentNameAndEmail.Hidden = true;
+			viewInputComment.Frame = new CoreGraphics.CGRect(0,UIScreen.MainScreen.Bounds.Height - viewInputComment.Frame.Height, viewInputComment.Frame.Width, viewInputComment.Frame.Height);
+			viewCommentTextAndSend.SetBottom(viewInputComment.Frame.Height);
 
 			tableComments.Frame = new CoreGraphics.CGRect (tableComments.Frame.Left, tableComments.Frame.Top, Settings.DeviceInfo.ScreenWidth, viewInputComment.Frame.Top - tableComments.Frame.Top);
 		}
@@ -180,10 +182,17 @@ namespace FSoft.WordApp.IOS.Views
 			base.OnKeyboardChanged(visible, keyboardHeight);
 			if (visible) {
 				txtComment.BecomeFirstResponder ();
+				if (!Settings.wpLoggedIn) {
+					viewInputComment.SetHeight (150);
+					viewPostCommentNameAndEmail.Hidden = false;
+				}
 				viewInputComment.Frame = new CoreGraphics.CGRect(0,UIScreen.MainScreen.Bounds.Height - viewInputComment.Frame.Height - keyboardHeight, viewInputComment.Frame.Width, viewInputComment.Frame.Height);
 			} else {
+				viewInputComment.SetHeight (50);
+				viewPostCommentNameAndEmail.Hidden = true;
 				viewInputComment.Frame = new CoreGraphics.CGRect(0,UIScreen.MainScreen.Bounds.Height - viewInputComment.Frame.Height,viewInputComment.Frame.Width, viewInputComment.Frame.Height);
 			}
+			viewCommentTextAndSend.SetBottom(viewInputComment.Frame.Height);
 			//viewInputComment.LayoutSubviews ();
 		}
 

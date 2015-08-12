@@ -16,6 +16,7 @@
                 <outlet property="txtEmail" destination="Qd2-p6-bbV" id="oRi-Vf-kOO"/>
                 <outlet property="txtName" destination="Xpy-oB-3iX" id="V86-oI-izS"/>
                 <outlet property="view" destination="iN0-l3-epB" id="kCW-yf-GMq"/>
+                <outlet property="viewCommentTextAndSend" destination="NwZ-ZW-pvB" id="8R8-aU-N6d"/>
                 <outlet property="viewInputComment" destination="GfQ-Pd-Tdl" id="gBS-v9-RmM"/>
                 <outlet property="viewNoComment" destination="fx8-4g-ihm" id="PGt-82-RHh"/>
                 <outlet property="viewNoCommentDevider" destination="Gtj-wD-Za2" id="RLr-1Y-VVg"/>
@@ -78,46 +79,18 @@
                     <rect key="frame" x="0.0" y="419" width="320" height="150"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mJQ-fy-fSl" customClass="MDButton">
-                            <rect key="frame" x="257" y="114" width="58" height="24"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="send button.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
-                                    <integer key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                        <view contentMode="scaleToFill" id="Xtz-rG-7SF">
-                            <rect key="frame" x="8" y="138" width="241" height="2"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Leave a comment" minimumFontSize="17" id="tFF-HC-EqD">
-                            <rect key="frame" x="8" y="108" width="241" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="singleLine" value="YES"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="hint" value="Leave a comment"/>
-                            </userDefinedRuntimeAttributes>
-                        </textField>
-                        <view contentMode="scaleToFill" id="6xy-wn-FrT">
+                        <view contentMode="scaleToFill" id="6xy-wn-FrT" userLabel="ViewNameAndEmail">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" id="Xpy-oB-3iX">
-                                    <rect key="frame" x="8" y="8" width="248" height="30"/>
+                                    <rect key="frame" x="8" y="15" width="248" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" id="Qd2-p6-bbV">
-                                    <rect key="frame" x="8" y="62" width="248" height="30"/>
+                                    <rect key="frame" x="8" y="65" width="248" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -127,15 +100,50 @@
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <view contentMode="scaleToFill" id="DwW-G8-Vk1" userLabel="ViewNameDivider">
-                                    <rect key="frame" x="8" y="35" width="248" height="2"/>
+                                    <rect key="frame" x="8" y="50" width="248" height="2"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <view contentMode="scaleToFill" id="ETt-0Z-JjH" userLabel="ViewEmailDivider">
-                                    <rect key="frame" x="8" y="90" width="248" height="2"/>
+                                    <rect key="frame" x="8" y="95" width="248" height="2"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" id="NwZ-ZW-pvB" userLabel="ViewCommentText">
+                            <rect key="frame" x="8" y="100" width="304" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" id="Xtz-rG-7SF">
+                                    <rect key="frame" x="0.0" y="37" width="248" height="2"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Leave a comment" minimumFontSize="17" id="tFF-HC-EqD">
+                                    <rect key="frame" x="0.0" y="9" width="241" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="singleLine" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="hint" value="Leave a comment"/>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mJQ-fy-fSl" customClass="MDButton">
+                                    <rect key="frame" x="254" y="13" width="50" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="send button.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
