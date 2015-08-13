@@ -15,7 +15,7 @@ Simple Wordpress Mobile Reader (iPhone and Android) with basic features using Xa
 - [x] List Category
 - [x] Read news
 - [x] Comment
-- [x] Like (kento vote: you can visible if you use it)
+- [x] Like (kento vote: you can set visible if you use this plugin)
 
 # Screenshots
 #### Home page
