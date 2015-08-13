@@ -5,66 +5,12 @@
     android:layout_height="fill_parent"
     android:id="@+id/menu_view_layout_main"
     android:background="@android:color/white">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:id="@+id/layout_menu_user"
-        android:layout_marginRight="0.0dp"
-        android:background="@color/menu_header_color">
-        <RelativeLayout
-            android:layout_width="@dimen/menu_avatar_size"
-            android:layout_height="@dimen/menu_avatar_size"
-            android:background="@drawable/circle_background_menu"
-            android:layout_margin="@dimen/menu_avatar_padding">
-            <TextView
-                android:text="A"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/post_view_comment_item_caption"
-                local:MvxBind="Text UserCaption"
-                android:layout_centerInParent="true"
-                android:textSize="@dimen/comment_avatar_font_size"
-                android:textColor="@android:color/white" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/layout_menu_user_textinfo">
-            <TextView
-                android:text="user@fsoft.com.vn"
-                local:MvxBind="Text Email"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/menu_user_email"
-                android:layout_marginBottom="@dimen/comment_avatar_margin"
-                android:gravity="bottom"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="@dimen/menu_avatar_padding"
-                android:textColor="@android:color/white" />
-            <TextView
-                android:text="Username"
-                local:MvxBind="Text DisplayName"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/menu_user_username"
-                android:layout_above="@id/menu_user_email"
-                android:layout_marginLeft="@dimen/menu_avatar_padding"
-                android:textStyle="bold"
-                android:textColor="@android:color/white" />
-        </RelativeLayout>
-    </LinearLayout>
     <TreeListView
         android:id="@+id/menu_categories_listview"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         local:MvxBind="ItemsSource OptionItems;ItemClick CatalogSelectedCommand"
         local:MvxItemTemplate="@layout/menu_catalog_item"
-        android:layout_below="@id/layout_menu_user"
         android:background="@android:color/white"
         android:paddingTop="0dp"
         android:divider="@null"

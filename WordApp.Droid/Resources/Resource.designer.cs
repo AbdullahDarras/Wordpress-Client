@@ -1600,11 +1600,11 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f090046
 			public const int imageView1 = 2131296326;
 			
-			// aapt resource value: 0x7f090073
-			public const int layout_menu_user = 2131296371;
+			// aapt resource value: 0x7f090072
+			public const int layout_menu_user = 2131296370;
 			
-			// aapt resource value: 0x7f090075
-			public const int layout_menu_user_textinfo = 2131296373;
+			// aapt resource value: 0x7f090074
+			public const int layout_menu_user_textinfo = 2131296372;
 			
 			// aapt resource value: 0x7f090020
 			public const int left = 2131296288;
@@ -1660,17 +1660,17 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f090071
 			public const int menu_signout_item = 2131296369;
 			
-			// aapt resource value: 0x7f090076
-			public const int menu_user_email = 2131296374;
+			// aapt resource value: 0x7f090075
+			public const int menu_user_email = 2131296373;
 			
-			// aapt resource value: 0x7f090077
-			public const int menu_user_username = 2131296375;
+			// aapt resource value: 0x7f090076
+			public const int menu_user_username = 2131296374;
 			
 			// aapt resource value: 0x7f090070
 			public const int menu_view_img_sep = 2131296368;
 			
-			// aapt resource value: 0x7f090072
-			public const int menu_view_layout_main = 2131296370;
+			// aapt resource value: 0x7f090077
+			public const int menu_view_layout_main = 2131296375;
 			
 			// aapt resource value: 0x7f090017
 			public const int middle = 2131296279;
@@ -1732,8 +1732,8 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f090086
 			public const int post_view_comment_img_overlay = 2131296390;
 			
-			// aapt resource value: 0x7f090074
-			public const int post_view_comment_item_caption = 2131296372;
+			// aapt resource value: 0x7f090073
+			public const int post_view_comment_item_caption = 2131296371;
 			
 			// aapt resource value: 0x7f09007b
 			public const int post_view_comment_item_content = 2131296379;
@@ -2023,43 +2023,49 @@ namespace FSoft.WordApp.Droid
 			public const int Main = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int menu_catalog_item = 2130903071;
+			public const int menu_app_info_item = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int menu_frame = 2130903072;
+			public const int menu_catalog_item = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int menu_signout_button = 2130903073;
+			public const int menu_frame = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int menu_subcatalog_item = 2130903074;
+			public const int menu_signout_button = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int MenuView = 2130903075;
+			public const int menu_subcatalog_item = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int post_view_comments_item = 2130903076;
+			public const int menu_user_info = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int PostView = 2130903077;
+			public const int MenuView = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int RecentPostsView = 2130903078;
+			public const int post_view_comments_item = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int RootView = 2130903079;
+			public const int PostView = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int slidingmenumain = 2130903080;
+			public const int RecentPostsView = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int SplashScreen = 2130903081;
+			public const int RootView = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int support_simple_spinner_dropdown_item = 2130903082;
+			public const int slidingmenumain = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int tmp = 2130903083;
+			public const int SplashScreen = 2130903083;
+			
+			// aapt resource value: 0x7f03002c
+			public const int support_simple_spinner_dropdown_item = 2130903084;
+			
+			// aapt resource value: 0x7f03002d
+			public const int tmp = 2130903085;
 			
 			static Layout()
 			{

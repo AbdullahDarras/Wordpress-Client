@@ -121,6 +121,10 @@ namespace FSoft.WordApp.Droid
 					return 1;
 				} else if (item is SignoutOptionItem) {
 					return 2;
+				} else if (item is AppInfoOptionItem) {
+					return 3;
+				} else if (item is WPUser) {
+					return 4;
 				}
 
 				
@@ -129,7 +133,7 @@ namespace FSoft.WordApp.Droid
 
 			public override int ViewTypeCount
 			{
-				get { return 3; }
+				get { return 5; }
 			}
 
 			public override View GetView (int position, View convertView, ViewGroup parent)
@@ -139,24 +143,19 @@ namespace FSoft.WordApp.Droid
 
 			protected override global::Android.Views.View GetBindableView(global::Android.Views.View convertView, object dataContext, int templateId)
 			{
-//				if (dataContext is BreakingNews)
-//					return base.GetBindableView (convertView, dataContext, Resource.Layout.home_view_breaking_news);
-//				else if (dataContext is Post)
-//					return base.GetBindableView (convertView, dataContext, Resource.Layout.home_view_post_item);
-//				else
-//					return base.GetBindableView(convertView, dataContext, Resource.Layout.home_view_grouped_title);
-
 				if (dataContext is CategoryOptionItem) {
 					var cat = dataContext as CategoryOptionItem;
 					if (cat.Category.Parent == 0) {
-						//System.Diagnostics.Debug.WriteLine ("Menu - Main Category " + cat.Title);
 						return base.GetBindableView (convertView, dataContext, Resource.Layout.menu_catalog_item);
 					} else {
-						//System.Diagnostics.Debug.WriteLine ("Menu - Sub Category " + cat.Title);
 						return base.GetBindableView (convertView, dataContext, Resource.Layout.menu_subcatalog_item);
 					}
 				} else if (dataContext is SignoutOptionItem) {
 					return base.GetBindableView (convertView, dataContext, Resource.Layout.menu_signout_button);
+				} else if (dataContext is AppInfoOptionItem) {
+					return base.GetBindableView (convertView, dataContext, Resource.Layout.menu_app_info_item);
+				} else if (dataContext is WPUser) {
+					return base.GetBindableView (convertView, dataContext, Resource.Layout.menu_user_info);
 				}
 
 				return null;
