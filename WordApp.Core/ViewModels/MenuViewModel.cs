@@ -49,16 +49,23 @@ namespace FSoft.WordApp.Core.ViewModels
 			}
 		}
 
+		private bool _LoggedOut;
+		public bool LoggedOut {
+			get { return _LoggedOut;}
+			set { SetProperty (ref _LoggedOut, value, "LoggedOut");}
+		}
+
 		private bool _LoggedIn;
 		public bool LoggedIn {
 			get { return _LoggedIn;}
-			set { SetProperty (ref _LoggedIn, value, "LoggedIn");}
+			set { 
+				SetProperty (ref _LoggedIn, value, "LoggedIn");
+				LoggedOut = !LoggedIn;
+			}
 		}
 
 		public MenuViewModel() {
 			OptionItems = new ObservableCollection<OptionItem> ();
-
-
 		}
 
 		async public void RefreshData(IFNewsService Service){

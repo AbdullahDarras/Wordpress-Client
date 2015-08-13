@@ -1453,11 +1453,11 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f090026
 			public const int action_mode_close_button = 2131296294;
 			
-			// aapt resource value: 0x7f0900a1
-			public const int action_refresh = 2131296417;
+			// aapt resource value: 0x7f0900a3
+			public const int action_refresh = 2131296419;
 			
-			// aapt resource value: 0x7f0900a2
-			public const int action_refresh1 = 2131296418;
+			// aapt resource value: 0x7f0900a4
+			public const int action_refresh1 = 2131296420;
 			
 			// aapt resource value: 0x7f090027
 			public const int activity_chooser_view_content = 2131296295;
@@ -1501,8 +1501,8 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f090019
 			public const int collapseActionView = 2131296281;
 			
-			// aapt resource value: 0x7f09009e
-			public const int content_frame = 2131296414;
+			// aapt resource value: 0x7f0900a0
+			public const int content_frame = 2131296416;
 			
 			// aapt resource value: 0x7f090035
 			public const int decor_content_parent = 2131296309;
@@ -1744,11 +1744,11 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f09007a
 			public const int post_view_comment_item_username = 2131296378;
 			
-			// aapt resource value: 0x7f09009a
-			public const int post_view_comment_nocomment_layout = 2131296410;
+			// aapt resource value: 0x7f09009c
+			public const int post_view_comment_nocomment_layout = 2131296412;
 			
-			// aapt resource value: 0x7f09009d
-			public const int post_view_comment_progressbar = 2131296413;
+			// aapt resource value: 0x7f09009f
+			public const int post_view_comment_progressbar = 2131296415;
 			
 			// aapt resource value: 0x7f090096
 			public const int post_view_comments_add_comment_layout = 2131296406;
@@ -1756,11 +1756,17 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f09008c
 			public const int post_view_comments_bottom_like_title = 2131296396;
 			
-			// aapt resource value: 0x7f090097
-			public const int post_view_comments_btn_add_comment_inactive = 2131296407;
+			// aapt resource value: 0x7f09009a
+			public const int post_view_comments_btn_add_comment_inactive = 2131296410;
+			
+			// aapt resource value: 0x7f090099
+			public const int post_view_comments_editText = 2131296409;
 			
 			// aapt resource value: 0x7f090098
-			public const int post_view_comments_editText = 2131296408;
+			public const int post_view_comments_editText_email = 2131296408;
+			
+			// aapt resource value: 0x7f090097
+			public const int post_view_comments_editText_name = 2131296407;
 			
 			// aapt resource value: 0x7f090094
 			public const int post_view_comments_header_label = 2131296404;
@@ -1771,11 +1777,11 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f09008b
 			public const int post_view_comments_liked_count = 2131296395;
 			
-			// aapt resource value: 0x7f090099
-			public const int post_view_comments_listview = 2131296409;
+			// aapt resource value: 0x7f09009b
+			public const int post_view_comments_listview = 2131296411;
 			
-			// aapt resource value: 0x7f09009c
-			public const int post_view_comments_nocomments_img_comment_icon = 2131296412;
+			// aapt resource value: 0x7f09009e
+			public const int post_view_comments_nocomments_img_comment_icon = 2131296414;
 			
 			// aapt resource value: 0x7f090090
 			public const int post_view_comments_nocomments_img_sep = 2131296400;
@@ -1783,8 +1789,8 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f09008d
 			public const int post_view_comments_nocomments_slg_label = 2131296397;
 			
-			// aapt resource value: 0x7f09009b
-			public const int post_view_comments_nocomments_title = 2131296411;
+			// aapt resource value: 0x7f09009d
+			public const int post_view_comments_nocomments_title = 2131296413;
 			
 			// aapt resource value: 0x7f090083
 			public const int post_view_content_layout = 2131296387;
@@ -1801,8 +1807,8 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f090085
 			public const int prbLogin = 2131296389;
 			
-			// aapt resource value: 0x7f0900a0
-			public const int progressBar1 = 2131296416;
+			// aapt resource value: 0x7f0900a2
+			public const int progressBar1 = 2131296418;
 			
 			// aapt resource value: 0x7f090005
 			public const int progress_circular = 2131296261;
@@ -1861,8 +1867,8 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f090013
 			public const int showTitle = 2131296275;
 			
-			// aapt resource value: 0x7f09009f
-			public const int slidingmenumain = 2131296415;
+			// aapt resource value: 0x7f0900a1
+			public const int slidingmenumain = 2131296417;
 			
 			// aapt resource value: 0x7f090007
 			public const int split_action_bar = 2131296263;

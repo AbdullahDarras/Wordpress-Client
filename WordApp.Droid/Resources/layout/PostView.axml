@@ -267,22 +267,39 @@
             android:id="@+id/post_view_comments_add_comment_layout"
             android:background="@color/separate_color"
             android:padding="10dp">
-            <ImageButton
-                android:src="@drawable/send_button"
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/post_view_comments_btn_add_comment_inactive"
-                android:background="?attr/selectableItemBackground"
-                android:layout_alignParentRight="true"
-                local:MvxBind="Click PostCommentCommand" />
+                android:id="@+id/post_view_comments_editText_name"
+                android:hint="Name"
+                android:layout_marginRight="60dp"
+                local:MvxBind="Text CommentName; Visibility LoggedOut, Converter=Visibility;" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/post_view_comments_editText_email"
+                android:hint="Email"
+                android:layout_below="@id/post_view_comments_editText_name"
+                android:layout_marginRight="60dp"
+                local:MvxBind="Text CommentEmail; Visibility LoggedOut, Converter=Visibility;" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/post_view_comments_editText"
                 android:hint="Leave a Comment"
-                android:layout_toLeftOf="@id/post_view_comments_btn_add_comment_inactive"
+                android:layout_below="@id/post_view_comments_editText_email"
+                android:layout_toLeftOf="@+id/post_view_comments_btn_add_comment_inactive"
                 android:layout_marginRight="10dp"
                 local:MvxBind="Text CommentText" />
+            <ImageButton
+                android:src="@drawable/send_button"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:id="@id/post_view_comments_btn_add_comment_inactive"
+                android:layout_below="@id/post_view_comments_editText_email"
+                android:background="?attr/selectableItemBackground"
+                android:layout_alignParentRight="true"
+                local:MvxBind="Click PostCommentCommand" />
         </RelativeLayout>
         <MvxListView
             android:id="@+id/post_view_comments_listview"

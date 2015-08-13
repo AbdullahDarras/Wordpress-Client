@@ -313,6 +313,12 @@ namespace FSoft.WordApp.Core.ViewModels
 			}
 		}
 
+		private bool _LoggedOut;
+		public bool LoggedOut {
+			get { return _LoggedOut;}
+			set { SetProperty (ref _LoggedOut, value, "LoggedOut");}
+		}
+
 		public PostViewModel(IFNewsService service, IMvxDeviceInfo deviceInfoPlugin) : base(service, deviceInfoPlugin) {
 			SupportLike = false;
 		}
@@ -327,6 +333,7 @@ namespace FSoft.WordApp.Core.ViewModels
 				Like_count = Post.Kento_vote.Vote_up_total;
 			
 			Comments = new ObservableCollection<Comment> ();
+			LoggedOut = !Settings.wpLoggedIn;
 		}
 
 		public override void Start ()
