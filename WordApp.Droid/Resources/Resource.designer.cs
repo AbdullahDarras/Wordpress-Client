@@ -1351,43 +1351,46 @@ namespace FSoft.WordApp.Droid
 			public const int like = 2130837566;
 			
 			// aapt resource value: 0x7f02003f
-			public const int logo_fpt = 2130837567;
+			public const int logo = 2130837567;
 			
 			// aapt resource value: 0x7f020040
-			public const int logo_login = 2130837568;
+			public const int logo_fpt = 2130837568;
 			
 			// aapt resource value: 0x7f020041
-			public const int menu = 2130837569;
+			public const int logo_login = 2130837569;
 			
 			// aapt resource value: 0x7f020042
-			public const int narrow_down = 2130837570;
+			public const int menu = 2130837570;
 			
 			// aapt resource value: 0x7f020043
-			public const int narrow_up = 2130837571;
+			public const int narrow_down = 2130837571;
 			
 			// aapt resource value: 0x7f020044
-			public const int no_comment = 2130837572;
+			public const int narrow_up = 2130837572;
 			
 			// aapt resource value: 0x7f020045
-			public const int no_like = 2130837573;
+			public const int no_comment = 2130837573;
 			
 			// aapt resource value: 0x7f020046
-			public const int refresh = 2130837574;
+			public const int no_like = 2130837574;
 			
 			// aapt resource value: 0x7f020047
-			public const int send_button = 2130837575;
+			public const int refresh = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public const int send_button_active = 2130837576;
+			public const int send_button = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public const int shadow = 2130837577;
+			public const int send_button_active = 2130837577;
 			
 			// aapt resource value: 0x7f02004a
-			public const int shadow_category = 2130837578;
+			public const int shadow = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int splash = 2130837579;
+			public const int shadow_category = 2130837579;
+			
+			// aapt resource value: 0x7f02004c
+			public const int splash = 2130837580;
 			
 			static Drawable()
 			{

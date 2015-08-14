@@ -230,6 +230,7 @@
     <AndroidResource Include="Resources\values-v19\dimens.xml" />
     <AndroidResource Include="Resources\layout\menu_app_info_item.axml" />
     <AndroidResource Include="Resources\layout\menu_user_info.axml" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

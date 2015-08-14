@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="fill_parent"
-    android:layout_height="60dp"
+    android:layout_height="80dp"
     android:minWidth="25px"
     android:minHeight="25px"
     android:background="@color/colorPrimary">
+    <ImageView
+        android:src="@drawable/logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageView1"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/padding"
+        android:layout_marginRight="@dimen/padding" />
     <TextView
         android:text="WordApp"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -13,5 +21,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView1"
         android:layout_gravity="center"
-        android:padding="@dimen/padding" />
+        android:padding="@dimen/padding"
+        android:textColor="@android:color/white" />
 </LinearLayout>
