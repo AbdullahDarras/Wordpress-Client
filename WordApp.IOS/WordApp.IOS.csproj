@@ -333,6 +333,7 @@
     <BundleResource Include="Resources\send button%402x.png" />
     <BundleResource Include="Resources\shadow_category.png" />
     <BundleResource Include="Resources\splash.png" />
+    <BundleResource Include="Resources\logo_login.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="Resources\iTunesArtwork.png" />

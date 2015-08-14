@@ -33,12 +33,6 @@ namespace FSoft.WordApp.IOS.Views
 	{
 		public TableSourceMenu (UITableView tableView) : base(tableView)
 		{
-//			tableView.Frame.Width = 375;
-//			tableView.Frame.Height = 667;
-
-//			tableView.Frame = new CoreGraphics.CGRect (0,0,375,667);
-
-
 			tableView.RegisterNibForCellReuse(UINib.FromName("MenuAvatarTableViewCell", NSBundle.MainBundle), MenuAvatarTableViewCell.Key);
 			tableView.RegisterNibForCellReuse(UINib.FromName("MenuCategory", NSBundle.MainBundle), MenuCategoryViewCell.Key);
 			tableView.RegisterNibForCellReuse(UINib.FromName("MenuSubCategory", NSBundle.MainBundle), MenuSubCategoryCellView.Key);

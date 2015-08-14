@@ -33,7 +33,7 @@ namespace FSoft.WordApp.IOS.Views
 	public class BaseViewController : MvxViewController
 	{
 		public static UIColor COLOR_HIGHLIGHT = UIColor.White.ColorFromHex(Settings.COLOR_HIGHLIGHT);//[UIColor colorWithRed:0.247f green:0.639f blue:0.251f alpha:1.00f];//0x3FA340;
-		public static UIColor COLOR_ACTIONBAR = UIColor.White.ColorFromHex(0x28388D);
+		public static UIColor COLOR_ACTIONBAR = UIColor.White.ColorFromHex(0x00ABD7);
 
 		public BaseViewController (string nibName, NSBundle bundle) : base (nibName, bundle)
 		{

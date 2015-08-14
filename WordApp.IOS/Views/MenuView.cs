@@ -42,7 +42,7 @@ namespace FSoft.WordApp.IOS.Views
 
 		public MenuView () : base ("MenuView", null)
 		{
-			//ViewDidLoad ();
+			
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -57,8 +57,6 @@ namespace FSoft.WordApp.IOS.Views
 		{
 			base.ViewDidLoad ();
 
-			//this.setRoundedView (viewUserCaption, (float)viewUserCaption.Frame.Width);
-
 
 			var TableSourceMenu = new TableSourceMenu (tableViewCategories);
 			this.CreateBinding (TableSourceMenu).To<MenuViewModel> (vm => vm.OptionItems).Apply ();
@@ -71,7 +69,6 @@ namespace FSoft.WordApp.IOS.Views
 		}
 
 		private void Relayout() {
-			AppDelegate app = UIApplication.SharedApplication.Delegate as AppDelegate;
 
 		}
 	}

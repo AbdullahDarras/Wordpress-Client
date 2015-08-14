@@ -8,14 +8,14 @@
         android:id="@+id/login_view_layout_main"
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/action_bar">
         <ImageView
-            android:src="@drawable/logo_fsoft"
+            android:src="@drawable/logo_login"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:id="@+id/login_view_logo"
             android:scaleType="fitCenter"
-            android:background="@android:color/black"
             android:paddingTop="@dimen/navigation_height"
             android:paddingBottom="@dimen/comment_avatar_font_size" />
         <RelativeLayout

@@ -194,7 +194,6 @@
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable\like.png" />
     <AndroidResource Include="Resources\drawable\logo_fpt.png" />
-    <AndroidResource Include="Resources\drawable\logo_fsoft.png" />
     <AndroidResource Include="Resources\drawable\logo_login.png" />
     <AndroidResource Include="Resources\drawable\menu.png" />
     <AndroidResource Include="Resources\drawable\narrow_down.png" />
