@@ -3,7 +3,7 @@
 	<color name="background_default">#F1F5F7</color>
     <color name="dark_bold">#555555</color>
     <color name="dark_bold_transparent">#99555555</color>
-    <color name="action_bar">#263290</color>
+    <color name="action_bar">#00ABD7</color>
     <color name="action_bar_tint">#FFFFFF</color>
     <color name="comments_header">#333333</color>
     <color name="comments_background">#F1F5F7</color>
@@ -23,8 +23,8 @@
     <color name="separate_color">#cccccc</color>
 
 
-    <color name="colorPrimary">#263290</color>
-    <color name="colorPrimaryDark">#121940</color>
+    <color name="colorPrimary">#00ABD7</color>
+    <color name="colorPrimaryDark">#004F62</color>
     <color name="accent">#0000</color>
 </resources>
 

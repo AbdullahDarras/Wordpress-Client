@@ -181,7 +181,6 @@
     <AndroidResource Include="Resources\anim\slide_left_right.xml" />
     <AndroidResource Include="Resources\anim\slide_right.xml" />
     <AndroidResource Include="Resources\anim\slide_right_right.xml" />
-    <AndroidResource Include="Resources\drawable\action_settings.png" />
     <AndroidResource Include="Resources\drawable\back.png" />
     <AndroidResource Include="Resources\drawable\circle_background.axml" />
     <AndroidResource Include="Resources\drawable\circle_background_1.axml" />
@@ -194,7 +193,6 @@
     <AndroidResource Include="Resources\drawable\home_image_overlay.png" />
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable\like.png" />
-    <AndroidResource Include="Resources\drawable\logo_cucumber.png" />
     <AndroidResource Include="Resources\drawable\logo_fpt.png" />
     <AndroidResource Include="Resources\drawable\logo_fsoft.png" />
     <AndroidResource Include="Resources\drawable\logo_login.png" />

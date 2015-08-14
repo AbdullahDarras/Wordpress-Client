@@ -117,7 +117,7 @@ namespace FSoft.WordApp.Core
 		public static List<Category> Categories { get; set; } 
 		public static List<Post> RecentPosts { get; set; }
 
-		public static int COLOR_HIGHLIGHT = 0x263290;
+		public static int COLOR_HIGHLIGHT = 0x00ABD7;
 		public const int PADDING_IOS = 16;
 		public static DeviceInfo DeviceInfo;
 

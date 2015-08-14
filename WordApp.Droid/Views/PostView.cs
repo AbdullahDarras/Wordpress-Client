@@ -39,26 +39,41 @@ using Cirrious.CrossCore;
 using Cirrious.CrossCore.Core;
 using Android.Content;
 using Android.Util;
+using Android.Graphics;
+using FSoft.WordApp.Core;
 
 namespace FSoft.WordApp.Droid
 {
 	[Activity (Label = "Post", MainLauncher = false, Theme = "@style/Theme.AppCompat.Light.NoActionBar")]
 
-	public class PostView : MvxActivity
+	public class PostView : MvxActivity, ViewTreeObserver.IOnGlobalLayoutListener
 	{
 		private PostViewModel PostViewModel { get { return base.ViewModel as PostViewModel;}}
 		private View CommentsView;
 		private View InputCommentEditText;
 		private bool IsCommentsViewAnimating;
 		private bool IsBottomViewAnimating;
+		private View PostRootView;
+
+		private EditText txtName;
+		private EditText txtEmail;
 
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 			this.OverridePendingTransition(Resource.Animation.slide_right,Resource.Animation.slide_left);
-			View _view = this.BindingInflate(Resource.Layout.PostView, null);
+			PostRootView = this.BindingInflate(Resource.Layout.PostView, null);
 
-			SetContentView (_view);
+			SetContentView (PostRootView);
+			PostRootView.ViewTreeObserver.AddOnGlobalLayoutListener (this);
+
+			txtName = (EditText)PostRootView.FindViewById (Resource.Id.post_view_comments_editText_name);
+			txtEmail = (EditText)PostRootView.FindViewById (Resource.Id.post_view_comments_editText_email);
+
+			if (Settings.wpLoggedIn) {
+				txtName.Visibility = ViewStates.Gone;
+				txtEmail.Visibility = ViewStates.Gone;
+			}
 
 			ObservableWebview web = (ObservableWebview)this.FindViewById (Resource.Id.post_view_webview);
 			WebSettings settings = web.Settings;
@@ -71,8 +86,8 @@ namespace FSoft.WordApp.Droid
 				}
 			};
 
-			CommentsView = _view.FindViewById (Resource.Id.post_view_comments_layout);
-			InputCommentEditText = _view.FindViewById (Resource.Id.post_view_comments_editText);
+			CommentsView = PostRootView.FindViewById (Resource.Id.post_view_comments_layout);
+			InputCommentEditText = PostRootView.FindViewById (Resource.Id.post_view_comments_editText);
 
 			PostViewModel.CommentPressed += (sender, e) => {
 				if (IsCommentsViewAnimating) return;
@@ -94,9 +109,9 @@ namespace FSoft.WordApp.Droid
 					al.OnAnimationEndAction  = (Animator animation) => {
 						IsCommentsViewAnimating = false;
 					};
-					if (CommentsView.TranslationX < _view.Width){
+					if (CommentsView.TranslationX < PostRootView.Width){
 						//width of the view is zero before layout
-						CommentsView.TranslationX = _view.Width; //set to right
+						CommentsView.TranslationX = PostRootView.Width; //set to right
 					}
 					CommentsView.Visibility = ViewStates.Visible;
 					CommentsView.Animate().TranslationX(0).SetListener(al).SetDuration(200);
@@ -122,7 +137,7 @@ namespace FSoft.WordApp.Droid
 			};
 
 
-			View BottomView = _view.FindViewById (Resource.Id.post_view_bottom_layout);
+			View BottomView = PostRootView.FindViewById (Resource.Id.post_view_bottom_layout);
 			web.BottomReached += (sender, e) => {
 				if (IsBottomViewAnimating) return;
 				if(BottomView.Visibility == ViewStates.Gone) {
@@ -132,9 +147,9 @@ namespace FSoft.WordApp.Droid
 					al.OnAnimationEndAction  = (Animator animation) => {
 						IsBottomViewAnimating = false;
 					};
-					if (BottomView.TranslationY < _view.Height){
+					if (BottomView.TranslationY < PostRootView.Height){
 						//width of the view is zero before layout
-						BottomView.TranslationY = _view.Height; //set to right
+						BottomView.TranslationY = PostRootView.Height; //set to right
 					}
 					BottomView.Visibility = ViewStates.Visible;
 					BottomView.Animate().TranslationY(0).SetListener(al).SetDuration(500);
@@ -166,7 +181,6 @@ namespace FSoft.WordApp.Droid
 			this.OverridePendingTransition (Resource.Animation.slide_left_right, Resource.Animation.slide_right_right);
 		}
 		public override void OnBackPressed(){
-			System.Diagnostics.Debug.WriteLine ("OnBackPressed");
 			if (CommentsView.Visibility == ViewStates.Visible) {
 				PostViewModel.ShowCommentCommand.Execute(null);
 
@@ -180,6 +194,25 @@ namespace FSoft.WordApp.Droid
 			//hide softkeyboard
 			InputMethodManager manager = (InputMethodManager) GetSystemService(InputMethodService);
 			manager.HideSoftInputFromWindow(InputCommentEditText.WindowToken, 0);
+		}
+
+		void ViewTreeObserver.IOnGlobalLayoutListener.OnGlobalLayout ()
+		{
+			Rect r = new Rect();
+			//r will be populated with the coordinates of your view that area still visible.
+			PostRootView.GetWindowVisibleDisplayFrame (r);
+			int heightDiff = PostRootView.RootView.Height - (r.Bottom - r.Top);
+			if (heightDiff > 201) { // if more than 100 pixels, its probably a keyboard...
+				System.Diagnostics.Debug.WriteLine ("Softkey show");
+				if (!Settings.wpLoggedIn) {
+					txtName.Visibility = ViewStates.Visible;
+					txtEmail.Visibility = ViewStates.Visible;
+				}
+			} else {
+				System.Diagnostics.Debug.WriteLine ("Softkey hide");
+				txtName.Visibility = ViewStates.Gone;
+				txtEmail.Visibility = ViewStates.Gone;
+			}
 		}
 
 		public class AnimatorListener : Java.Lang.Object, Animator.IAnimatorListener

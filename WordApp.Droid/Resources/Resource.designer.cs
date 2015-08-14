@@ -1315,88 +1315,82 @@ namespace FSoft.WordApp.Droid
 			public const int abc_textfield_search_material = 2130837554;
 			
 			// aapt resource value: 0x7f020033
-			public const int action_settings = 2130837555;
+			public const int back = 2130837555;
 			
 			// aapt resource value: 0x7f020034
-			public const int back = 2130837556;
+			public const int circle_background = 2130837556;
 			
 			// aapt resource value: 0x7f020035
-			public const int circle_background = 2130837557;
+			public const int circle_background_1 = 2130837557;
 			
 			// aapt resource value: 0x7f020036
-			public const int circle_background_1 = 2130837558;
+			public const int circle_background_2 = 2130837558;
 			
 			// aapt resource value: 0x7f020037
-			public const int circle_background_2 = 2130837559;
+			public const int circle_background_3 = 2130837559;
 			
 			// aapt resource value: 0x7f020038
-			public const int circle_background_3 = 2130837560;
+			public const int circle_background_4 = 2130837560;
 			
 			// aapt resource value: 0x7f020039
-			public const int circle_background_4 = 2130837561;
+			public const int circle_background_menu = 2130837561;
 			
 			// aapt resource value: 0x7f02003a
-			public const int circle_background_menu = 2130837562;
+			public const int comment = 2130837562;
 			
 			// aapt resource value: 0x7f02003b
-			public const int comment = 2130837563;
+			public const int drop_shadow = 2130837563;
 			
 			// aapt resource value: 0x7f02003c
-			public const int drop_shadow = 2130837564;
+			public const int home_image_overlay = 2130837564;
 			
 			// aapt resource value: 0x7f02003d
-			public const int home_image_overlay = 2130837565;
+			public const int Icon = 2130837565;
 			
 			// aapt resource value: 0x7f02003e
-			public const int Icon = 2130837566;
+			public const int like = 2130837566;
 			
 			// aapt resource value: 0x7f02003f
-			public const int like = 2130837567;
+			public const int logo_fpt = 2130837567;
 			
 			// aapt resource value: 0x7f020040
-			public const int logo_cucumber = 2130837568;
+			public const int logo_fsoft = 2130837568;
 			
 			// aapt resource value: 0x7f020041
-			public const int logo_fpt = 2130837569;
+			public const int logo_login = 2130837569;
 			
 			// aapt resource value: 0x7f020042
-			public const int logo_fsoft = 2130837570;
+			public const int menu = 2130837570;
 			
 			// aapt resource value: 0x7f020043
-			public const int logo_login = 2130837571;
+			public const int narrow_down = 2130837571;
 			
 			// aapt resource value: 0x7f020044
-			public const int menu = 2130837572;
+			public const int narrow_up = 2130837572;
 			
 			// aapt resource value: 0x7f020045
-			public const int narrow_down = 2130837573;
+			public const int no_comment = 2130837573;
 			
 			// aapt resource value: 0x7f020046
-			public const int narrow_up = 2130837574;
+			public const int no_like = 2130837574;
 			
 			// aapt resource value: 0x7f020047
-			public const int no_comment = 2130837575;
+			public const int refresh = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public const int no_like = 2130837576;
+			public const int send_button = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public const int refresh = 2130837577;
+			public const int send_button_active = 2130837577;
 			
 			// aapt resource value: 0x7f02004a
-			public const int send_button = 2130837578;
+			public const int shadow = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int send_button_active = 2130837579;
+			public const int shadow_category = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int shadow = 2130837580;
-			
-			// aapt resource value: 0x7f02004d
-			public const int shadow_category = 2130837581;
-			
-			// aapt resource value: 0x7f02004e
-			public const int splash = 2130837582;
+			public const int splash = 2130837580;
 			
 			static Drawable()
 			{
@@ -1453,11 +1447,11 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f090026
 			public const int action_mode_close_button = 2131296294;
 			
-			// aapt resource value: 0x7f0900a3
-			public const int action_refresh = 2131296419;
-			
 			// aapt resource value: 0x7f0900a4
-			public const int action_refresh1 = 2131296420;
+			public const int action_refresh = 2131296420;
+			
+			// aapt resource value: 0x7f0900a5
+			public const int action_refresh1 = 2131296421;
 			
 			// aapt resource value: 0x7f090027
 			public const int activity_chooser_view_content = 2131296295;
@@ -1501,8 +1495,8 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f090019
 			public const int collapseActionView = 2131296281;
 			
-			// aapt resource value: 0x7f0900a0
-			public const int content_frame = 2131296416;
+			// aapt resource value: 0x7f0900a1
+			public const int content_frame = 2131296417;
 			
 			// aapt resource value: 0x7f090035
 			public const int decor_content_parent = 2131296309;
@@ -1687,50 +1681,50 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f09000c
 			public const int normal = 2131296268;
 			
-			// aapt resource value: 0x7f09008f
-			public const int post_view_bottom_btn_comment = 2131296399;
-			
-			// aapt resource value: 0x7f090089
-			public const int post_view_bottom_btn_like = 2131296393;
-			
-			// aapt resource value: 0x7f090088
-			public const int post_view_bottom_btn_like_layout = 2131296392;
+			// aapt resource value: 0x7f090090
+			public const int post_view_bottom_btn_comment = 2131296400;
 			
 			// aapt resource value: 0x7f09008a
-			public const int post_view_bottom_btn_no_like = 2131296394;
+			public const int post_view_bottom_btn_like = 2131296394;
 			
-			// aapt resource value: 0x7f09008e
-			public const int post_view_bottom_comment_count = 2131296398;
+			// aapt resource value: 0x7f090089
+			public const int post_view_bottom_btn_like_layout = 2131296393;
 			
-			// aapt resource value: 0x7f090087
-			public const int post_view_bottom_layout = 2131296391;
+			// aapt resource value: 0x7f09008b
+			public const int post_view_bottom_btn_no_like = 2131296395;
 			
-			// aapt resource value: 0x7f09007d
-			public const int post_view_btn_back = 2131296381;
+			// aapt resource value: 0x7f09008f
+			public const int post_view_bottom_comment_count = 2131296399;
 			
-			// aapt resource value: 0x7f09007f
-			public const int post_view_btn_comment = 2131296383;
-			
-			// aapt resource value: 0x7f090093
-			public const int post_view_btn_comment_back = 2131296403;
-			
-			// aapt resource value: 0x7f090095
-			public const int post_view_btn_comment_refresh = 2131296405;
-			
-			// aapt resource value: 0x7f090082
-			public const int post_view_btn_like = 2131296386;
-			
-			// aapt resource value: 0x7f090081
-			public const int post_view_btn_unlike = 2131296385;
+			// aapt resource value: 0x7f090088
+			public const int post_view_bottom_layout = 2131296392;
 			
 			// aapt resource value: 0x7f09007e
-			public const int post_view_category_name = 2131296382;
+			public const int post_view_btn_back = 2131296382;
 			
-			// aapt resource value: 0x7f090092
-			public const int post_view_comment_header_layout = 2131296402;
+			// aapt resource value: 0x7f090080
+			public const int post_view_btn_comment = 2131296384;
 			
-			// aapt resource value: 0x7f090086
-			public const int post_view_comment_img_overlay = 2131296390;
+			// aapt resource value: 0x7f090094
+			public const int post_view_btn_comment_back = 2131296404;
+			
+			// aapt resource value: 0x7f090096
+			public const int post_view_btn_comment_refresh = 2131296406;
+			
+			// aapt resource value: 0x7f090083
+			public const int post_view_btn_like = 2131296387;
+			
+			// aapt resource value: 0x7f090082
+			public const int post_view_btn_unlike = 2131296386;
+			
+			// aapt resource value: 0x7f09007f
+			public const int post_view_category_name = 2131296383;
+			
+			// aapt resource value: 0x7f090093
+			public const int post_view_comment_header_layout = 2131296403;
+			
+			// aapt resource value: 0x7f090087
+			public const int post_view_comment_img_overlay = 2131296391;
 			
 			// aapt resource value: 0x7f090073
 			public const int post_view_comment_item_caption = 2131296371;
@@ -1744,71 +1738,74 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f09007a
 			public const int post_view_comment_item_username = 2131296378;
 			
-			// aapt resource value: 0x7f09009c
-			public const int post_view_comment_nocomment_layout = 2131296412;
+			// aapt resource value: 0x7f09009d
+			public const int post_view_comment_nocomment_layout = 2131296413;
 			
-			// aapt resource value: 0x7f09009f
-			public const int post_view_comment_progressbar = 2131296415;
-			
-			// aapt resource value: 0x7f090096
-			public const int post_view_comments_add_comment_layout = 2131296406;
-			
-			// aapt resource value: 0x7f09008c
-			public const int post_view_comments_bottom_like_title = 2131296396;
-			
-			// aapt resource value: 0x7f09009a
-			public const int post_view_comments_btn_add_comment_inactive = 2131296410;
-			
-			// aapt resource value: 0x7f090099
-			public const int post_view_comments_editText = 2131296409;
-			
-			// aapt resource value: 0x7f090098
-			public const int post_view_comments_editText_email = 2131296408;
+			// aapt resource value: 0x7f0900a0
+			public const int post_view_comment_progressbar = 2131296416;
 			
 			// aapt resource value: 0x7f090097
-			public const int post_view_comments_editText_name = 2131296407;
-			
-			// aapt resource value: 0x7f090094
-			public const int post_view_comments_header_label = 2131296404;
-			
-			// aapt resource value: 0x7f090091
-			public const int post_view_comments_layout = 2131296401;
-			
-			// aapt resource value: 0x7f09008b
-			public const int post_view_comments_liked_count = 2131296395;
-			
-			// aapt resource value: 0x7f09009b
-			public const int post_view_comments_listview = 2131296411;
-			
-			// aapt resource value: 0x7f09009e
-			public const int post_view_comments_nocomments_img_comment_icon = 2131296414;
-			
-			// aapt resource value: 0x7f090090
-			public const int post_view_comments_nocomments_img_sep = 2131296400;
+			public const int post_view_comments_add_comment_layout = 2131296407;
 			
 			// aapt resource value: 0x7f09008d
-			public const int post_view_comments_nocomments_slg_label = 2131296397;
+			public const int post_view_comments_bottom_like_title = 2131296397;
 			
-			// aapt resource value: 0x7f09009d
-			public const int post_view_comments_nocomments_title = 2131296413;
+			// aapt resource value: 0x7f09009b
+			public const int post_view_comments_btn_add_comment_inactive = 2131296411;
 			
-			// aapt resource value: 0x7f090083
-			public const int post_view_content_layout = 2131296387;
+			// aapt resource value: 0x7f09009a
+			public const int post_view_comments_editText = 2131296410;
 			
-			// aapt resource value: 0x7f090080
-			public const int post_view_content_like_layout = 2131296384;
+			// aapt resource value: 0x7f090099
+			public const int post_view_comments_editText_email = 2131296409;
 			
-			// aapt resource value: 0x7f09007c
-			public const int post_view_header_layout = 2131296380;
+			// aapt resource value: 0x7f090098
+			public const int post_view_comments_editText_name = 2131296408;
+			
+			// aapt resource value: 0x7f090095
+			public const int post_view_comments_header_label = 2131296405;
+			
+			// aapt resource value: 0x7f090092
+			public const int post_view_comments_layout = 2131296402;
+			
+			// aapt resource value: 0x7f09008c
+			public const int post_view_comments_liked_count = 2131296396;
+			
+			// aapt resource value: 0x7f09009c
+			public const int post_view_comments_listview = 2131296412;
+			
+			// aapt resource value: 0x7f09009f
+			public const int post_view_comments_nocomments_img_comment_icon = 2131296415;
+			
+			// aapt resource value: 0x7f090091
+			public const int post_view_comments_nocomments_img_sep = 2131296401;
+			
+			// aapt resource value: 0x7f09008e
+			public const int post_view_comments_nocomments_slg_label = 2131296398;
+			
+			// aapt resource value: 0x7f09009e
+			public const int post_view_comments_nocomments_title = 2131296414;
 			
 			// aapt resource value: 0x7f090084
-			public const int post_view_webview = 2131296388;
+			public const int post_view_content_layout = 2131296388;
+			
+			// aapt resource value: 0x7f090081
+			public const int post_view_content_like_layout = 2131296385;
+			
+			// aapt resource value: 0x7f09007d
+			public const int post_view_header_layout = 2131296381;
+			
+			// aapt resource value: 0x7f09007c
+			public const int post_view_root_layout = 2131296380;
 			
 			// aapt resource value: 0x7f090085
-			public const int prbLogin = 2131296389;
+			public const int post_view_webview = 2131296389;
 			
-			// aapt resource value: 0x7f0900a2
-			public const int progressBar1 = 2131296418;
+			// aapt resource value: 0x7f090086
+			public const int prbLogin = 2131296390;
+			
+			// aapt resource value: 0x7f0900a3
+			public const int progressBar1 = 2131296419;
 			
 			// aapt resource value: 0x7f090005
 			public const int progress_circular = 2131296261;
@@ -1867,8 +1864,8 @@ namespace FSoft.WordApp.Droid
 			// aapt resource value: 0x7f090013
 			public const int showTitle = 2131296275;
 			
-			// aapt resource value: 0x7f0900a1
-			public const int slidingmenumain = 2131296417;
+			// aapt resource value: 0x7f0900a2
+			public const int slidingmenumain = 2131296418;
 			
 			// aapt resource value: 0x7f090007
 			public const int split_action_bar = 2131296263;
