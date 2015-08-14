@@ -13,10 +13,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="muf-Gu-IB2">
+                        <rect key="frame" x="8" y="15" width="70" height="70"/>
+                    </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WordApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8A5-kY-eKm">
-                        <rect key="frame" x="8" y="32" width="175" height="36"/>
+                        <rect key="frame" x="86" y="32" width="140" height="36"/>
                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                        <color key="textColor" red="0.019141109362817432" green="0.012344674732213345" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <size key="shadowOffset" width="3" height="3"/>
                     </label>
@@ -27,6 +30,9 @@
             <point key="canvasLocation" x="342" y="475"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="logo.png" width="512" height="512"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
