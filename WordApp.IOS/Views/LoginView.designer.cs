@@ -29,7 +29,7 @@ namespace FSoft.WordApp.IOS.Views
 	partial class LoginView
 	{
 		[Outlet]
-		iOSUILib.MDButton btnLogin { get; set; }
+		MaterialControls.MDButton btnLogin { get; set; }
 
 		[Outlet]
 		UIKit.UIImageView imgLogo { get; set; }
@@ -44,7 +44,7 @@ namespace FSoft.WordApp.IOS.Views
 		UIKit.UIProgressView prgLoading { get; set; }
 
 		[Outlet]
-		iOSUILib.MDSwitch swRememberPassword { get; set; }
+		MaterialControls.MDSwitch swRememberPassword { get; set; }
 
 		[Outlet]
 		UIKit.UITextField txtPassword { get; set; }

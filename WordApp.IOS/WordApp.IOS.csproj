@@ -140,8 +140,8 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="XamarinUILib">
-      <HintPath>..\packages\MaterialControls.1.0.3.1\lib\Xamarin.iOS10\XamarinUILib.dll</HintPath>
+    <Reference Include="MaterialControls">
+      <HintPath>..\packages\MaterialControls.1.1.1\lib\Xamarin.iOS10\MaterialControls.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -288,7 +288,6 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <ItemGroup>
-    <BundleResource Include="Resources\.DS_Store" />
     <BundleResource Include="Resources\back.png" />
     <BundleResource Include="Resources\back%402x.png" />
     <BundleResource Include="Resources\banner.png" />

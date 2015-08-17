@@ -92,7 +92,7 @@ namespace FSoft.WordApp.IOS
 			sw.ValueChanged += (sender, args) => { sw.On = false; };
 		}
 
-		public void Include(iOSUILib.MDSwitch sw)
+		public void Include(MaterialControls.MDSwitch sw)
 		{
 			sw.On = !sw.On;
 			sw.ValueChanged += (sender, args) => { sw.On = false; };

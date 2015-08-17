@@ -31,7 +31,6 @@ using System.Collections.Generic;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.CrossCore.Converters;
 using Foundation;
-using iOSUILib;
 using SidebarNavigation;
 using Cirrious.MvvmCross.ViewModels;
 using FSoft.WordApp.Core;

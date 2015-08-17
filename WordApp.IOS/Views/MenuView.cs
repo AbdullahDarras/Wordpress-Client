@@ -31,7 +31,6 @@ using System.Collections.Generic;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.CrossCore.Converters;
 using Foundation;
-using iOSUILib;
 using FSoft.WordApp.Core;
 
 namespace FSoft.WordApp.IOS.Views

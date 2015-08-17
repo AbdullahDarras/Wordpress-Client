@@ -29,7 +29,7 @@ namespace FSoft.WordApp.IOS.Views
 	partial class HomeView
 	{
 		[Outlet]
-		iOSUILib.MDProgress prgLoading { get; set; }
+		MaterialControls.MDProgress prgLoading { get; set; }
 
 		[Outlet]
 		UIKit.UITableView tableHomePosts { get; set; }

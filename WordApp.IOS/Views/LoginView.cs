@@ -105,7 +105,7 @@ namespace FSoft.WordApp.IOS.Views
 
 			swRememberPassword.On = LoginViewModel.RememberPassword;
 			swRememberPassword.ValueChanged += (sender, e) => {
-				var sw = (iOSUILib.MDSwitch)sender;
+				var sw = (MaterialControls.MDSwitch)sender;
 				LoginViewModel.RememberPassword = sw.On;
 			};
 			DismissKeyboardOnBackgroundTap ();

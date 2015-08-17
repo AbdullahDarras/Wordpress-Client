@@ -13,7 +13,7 @@ namespace FSoft.WordApp.IOS.Views
 	partial class PostCommentsView
 	{
 		[Outlet]
-		iOSUILib.MDButton btnPostComment { get; set; }
+		MaterialControls.MDButton btnPostComment { get; set; }
 
 		[Outlet]
 		UIKit.UIImageView imgNoComment { get; set; }
@@ -25,19 +25,19 @@ namespace FSoft.WordApp.IOS.Views
 		UIKit.UILabel lbPostTitle { get; set; }
 
 		[Outlet]
-		iOSUILib.MDProgress prgLoading { get; set; }
+		MaterialControls.MDProgress prgLoading { get; set; }
 
 		[Outlet]
 		UIKit.UITableView tableComments { get; set; }
 
 		[Outlet]
-		iOSUILib.MDTextField txtComment { get; set; }
+		MaterialControls.MDTextField txtComment { get; set; }
 
 		[Outlet]
-		iOSUILib.MDTextField txtEmail { get; set; }
+		MaterialControls.MDTextField txtEmail { get; set; }
 
 		[Outlet]
-		iOSUILib.MDTextField txtName { get; set; }
+		MaterialControls.MDTextField txtName { get; set; }
 
 		[Outlet]
 		UIKit.UIView viewCommentTextAndSend { get; set; }
